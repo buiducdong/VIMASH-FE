@@ -1,0 +1,44 @@
+<div class="customer-destination">
+  <app-side-nav></app-side-nav>
+  <app-header></app-header>
+  <div class="container">
+    <div class="search">
+      <div class="from-to input-group">
+        <label>出荷先コード</label>
+        <div class="from-to__input">
+          <input id="from" type="text" /><span>~</span>
+          <input id="to" type="text" />
+        </div>
+      </div>
+      <div class="search__name input-group">
+        <label>名称</label>
+        <input type="text" />
+      </div>
+      <div class="group-button">
+        <button class="search-btn">検索</button>
+        <button class="clear-btn">クリア</button>
+      </div>
+    </div>
+    <div class="table-group">
+      <div class="table-group__header">
+        <div class="title">検索結果一覧</div>
+        <div class="download-csv">
+          <mat-icon class="download" svgIcon="icon-lock"></mat-icon>
+          <span>CSV</span>
+        </div>
+      </div>
+      <div class="table">
+        <table>
+          <thead>
+            <tr>
+              <th>..</th>
+            </tr>
+          </thead>
+          <tbody *ngFor="let data of listdata; let i = index">
+            <tr></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>

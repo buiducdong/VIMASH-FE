@@ -1,10 +1,16 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { IconService } from './core/services/icon/icon.service';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  styleUrls: ['./app.component.scss'],
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
   title = 'VIMASH_FE';
+  public constructor(private icon: IconService) {}
+
+  public ngOnInit(): void {
+    this.icon.init();
+  }
 }
