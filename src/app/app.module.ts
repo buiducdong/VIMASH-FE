@@ -4,12 +4,13 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { CustomerDestinationDetailComponent } from './pages/system/customer-destination-detail/customer-destination-detail.component';
 
 import { HttpClientModule } from '@angular/common/http';
 import { LayoutModule } from './layout/layout.module';
 import { SystemModule } from './pages/system/system.module';
-import { SideNavComponent } from './layout';
+import { ToastrModule } from 'ngx-toastr';
+import { CoreModule } from './core/core.module';
+import { CommonAppModule } from './common/common.module';
 
 @NgModule({
   declarations: [
@@ -20,8 +21,16 @@ import { SideNavComponent } from './layout';
     AppRoutingModule,
     BrowserAnimationsModule,
     HttpClientModule,
+
+    // app core, common, dependancy
+    CoreModule.forRoot(),
+    CommonAppModule.forRoot(),
     LayoutModule,
-    SystemModule
+    SystemModule,
+    ToastrModule.forRoot({
+      timeOut: 3000,
+      positionClass: 'toast-top-right'
+    })
   ],
   providers: [],
   bootstrap: [AppComponent],
