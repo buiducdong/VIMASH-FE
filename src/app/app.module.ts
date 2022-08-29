@@ -11,6 +11,9 @@ import { SystemModule } from './pages/system/system.module';
 import { ToastrModule } from 'ngx-toastr';
 import { CoreModule } from './core/core.module';
 import { CommonAppModule } from './common/common.module';
+import { MatTableModule } from '@angular/material/table';
+
+
 
 @NgModule({
   declarations: [
@@ -21,6 +24,7 @@ import { CommonAppModule } from './common/common.module';
     AppRoutingModule,
     BrowserAnimationsModule,
     HttpClientModule,
+    MatTableModule,
 
     // app core, common, dependancy
     CoreModule.forRoot(),
