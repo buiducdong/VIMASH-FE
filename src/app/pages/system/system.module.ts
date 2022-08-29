@@ -1,4 +1,5 @@
 import { NgModule } from '@angular/core';
+import { TranslateModule } from '@ngx-translate/core';
 import { LayoutModule } from 'src/app/layout/layout.module';
 import { CustomerDestinationDetailComponent } from './customer-destination-detail/customer-destination-detail.component';
 import { CustomerDestiantionComponent } from './customer-destination/customer-destiantion.component';
@@ -9,7 +10,8 @@ import { SystemRoutingModule } from './system.routing.module';
   declarations: [CustomerDestiantionComponent, CustomerDestinationDetailComponent, SystemComponent],
   imports: [
     SystemRoutingModule,
-    LayoutModule
+    LayoutModule,
+    TranslateModule
   ],
   providers: [],
   bootstrap: [SystemComponent]
