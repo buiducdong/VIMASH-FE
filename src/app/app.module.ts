@@ -5,14 +5,18 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { LayoutModule } from './layout/layout.module';
 import { SystemModule } from './pages/system/system.module';
 import { ToastrModule } from 'ngx-toastr';
-import { CoreModule } from './core/core.module';
+import { CoreModule, HttpLoaderFactory } from './core/core.module';
 import { CommonAppModule } from './common/common.module';
+
 import { MatTableModule } from '@angular/material/table';
 
+
+
+import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 
 
 @NgModule({
@@ -34,7 +38,7 @@ import { MatTableModule } from '@angular/material/table';
     ToastrModule.forRoot({
       timeOut: 3000,
       positionClass: 'toast-top-right'
-    })
+    }),
   ],
   providers: [],
   bootstrap: [AppComponent],

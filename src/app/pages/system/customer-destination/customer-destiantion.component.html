@@ -1,19 +1,21 @@
 <div class="container">
   <div class="search">
     <div class="from-to input-group">
-      <label>出荷先コード</label>
+      <label>{{ "screen.customer.customer-code" | translate }}</label>
       <div class="from-to__input">
-        <input id="from" type="text" /><span>~</span>
-        <input id="to" type="text" />
+        <input name="from" [ngModel] id="from" type="text" /><span>~</span>
+        <input name="to" ngModel id="to" type="text" />
       </div>
     </div>
     <div class="search__name input-group">
-      <label>名称</label>
-      <input type="text" />
+      <label>{{ "screen.customer.customer-name" | translate }}</label>
+      <input name="name" ngModel type="text" />
     </div>
     <div class="group-button">
-      <button class="search-btn">検索</button>
-      <button class="clear-btn">クリア</button>
+      <button class="search-btn">
+        {{ "common.button.search" | translate }}
+      </button>
+      <button class="clear-btn">{{ "common.button.clear" | translate }}</button>
     </div>
   </div>
   <div class="table-group">
@@ -21,11 +23,11 @@
       <div class="title">検索結果一覧</div>
       <div class="download-csv">
         <mat-icon class="download" svgIcon="icon-lock"></mat-icon>
-        <span>CSV</span>
+        <span>csv</span>
       </div>
     </div>
     <div class="table">
-      <app-datatable-customer></app-datatable-customer>
+      <datatable-customer></datatable-customer>
     </div>
   </div>
 </div>
