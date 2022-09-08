@@ -1,4 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { HttpService } from 'src/app/core/services/http/http.service';
+import { environment } from '../../../../../environments/environment'
+import { customer } from 'src/app/layout/models/customer.model';
+import { MatTableDataSource } from '@angular/material/table';
+import { MatPaginator } from '@angular/material/paginator';
 
 @Component({
   selector: 'datatable-customer',
@@ -6,14 +11,39 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./datatable-customer.component.scss']
 })
 export class DatatableCustomer implements OnInit {
+  dataSource: any;
 
-  columns: string[] = ['position', '出荷先コード', '名称', '担当者', '郵便番号', '住所', '電話番号', 'ファックス番号', 'リードタイム', 'ルート', 'コース'];
+  columns: string[] = [
+    'position',
+    'customerCode',
+    'customerName',
+    'picName',
+    'address',
+    'phoneNumber',
+    'postCode',
+    'faxNumber',
+    'leadTime',
+    'routeCode',
+    'courseCode'
+  ];
 
-  dataCustomer: any;
+  @ViewChild(MatPaginator) paginator!: MatPaginator;
 
-  constructor() { }
+  constructor(private httpService: HttpService) {}
+
+  Customer?: customer[];
 
   ngOnInit(): void {
+    this.getCustomerTable();
   }
 
+  getCustomerTable() {
+    const http = environment.API_SERVICE + "/api/customer"
+    this.httpService.get(http).subscribe((res) => {
+      console.log(res.data);
+      this.Customer = res.data.results;
+      this.dataSource  = new MatTableDataSource<customer>(res.data.results);
+      this.dataSource.paginator = this.paginator;
+    });
+  }
 }
