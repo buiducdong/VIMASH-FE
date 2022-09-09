@@ -30,10 +30,10 @@ export class DatatableCustomer implements OnInit {
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
 
-  constructor(private httpService: HttpService) {}
+  constructor(private httpService: HttpService) { }
 
   Customer?: customer[];
-  serchRequets: ISearchRequest= {};
+  serchRequets: ISearchRequest = {};
 
   ngOnInit(): void {
     this.getCustomerTable();
@@ -42,9 +42,9 @@ export class DatatableCustomer implements OnInit {
   getCustomerTable() {
     const http = environment.API_SERVICE + "/api/customers"
     this.httpService.get(http, this.serchRequets).subscribe((res) => {
-      console.log(res.ResultBean.data);
+      console.log(res.ResultBean.data.results);
       this.Customer = res.ResultBean.data.results;
-      this.dataSource  = new MatTableDataSource<customer>(res.ResultBean.data.results);
+      this.dataSource = new MatTableDataSource<customer>(res.ResultBean.data.results);
       this.dataSource.paginator = this.paginator;
     });
   }
