@@ -1,72 +1,104 @@
+<table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+  <!-- position column -->
+  <ng-container matColumnDef="position" [sticky]="true" [stickyEnd]="true">
+    <th class="No" mat-header-cell *matHeaderCellDef>No.</th>
+    <td class="No" mat-cell *matCellDef="let element; let j = index">
+      {{ j + 1 }}
+    </td>
+  </ng-container>
 
-  <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+  <!-- customerId column -->
+  <ng-container matColumnDef="customerCode" [sticky]="true" [stickyEnd]="true">
+    <th class="customerCode" mat-header-cell *matHeaderCellDef>出荷先コード</th>
+    <td class="customerCode" mat-cell *matCellDef="let element">
+      {{ element.customerCode }}
+    </td>
+  </ng-container>
 
-    <!-- position column -->
-    <ng-container matColumnDef="position">
-      <th class="No" mat-header-cell *matHeaderCellDef>No.</th>
-      <td class="No" mat-cell *matCellDef="let element">{{ element.position }} 1</td>
-    </ng-container>
+  <!-- customerName column -->
+  <ng-container matColumnDef="customerName">
+    <th class="customerName" mat-header-cell *matHeaderCellDef>名称</th>
+    <td class="customerName" mat-cell *matCellDef="let element">
+      {{ element.customerName }}
+    </td>
+  </ng-container>
 
-    <!-- customerId column -->
-    <ng-container matColumnDef="customerCode">
-      <th class="customerCode" mat-header-cell *matHeaderCellDef>出荷先コード</th>
-      <td class="customerCode" mat-cell *matCellDef="let element">{{ element.customerCode }}</td>
-    </ng-container>
+  <!-- picName column -->
+  <ng-container matColumnDef="picName">
+    <th class="picName" mat-header-cell *matHeaderCellDef>担当者</th>
+    <td class="picName" mat-cell *matCellDef="let element">
+      {{ element.picName }}
+    </td>
+  </ng-container>
 
-    <!-- customerName column -->
-    <ng-container matColumnDef="customerName">
-      <th class="customerName"  mat-header-cell *matHeaderCellDef>名称</th>
-      <td class="customerName" mat-cell *matCellDef="let element">{{ element.customerName }}</td>
-    </ng-container>
+  <!-- postCode column -->
+  <ng-container matColumnDef="postCode">
+    <th class="postCode" mat-header-cell *matHeaderCellDef>郵便番号</th>
+    <td class="postCode" mat-cell *matCellDef="let element">
+      {{ element.postCode }}
+    </td>
+  </ng-container>
 
-    <!-- picName column -->
-    <ng-container matColumnDef="picName">
-      <th class="picName" mat-header-cell *matHeaderCellDef>担当者</th>
-      <td class="picName" mat-cell *matCellDef="let element">{{ element.picName }}</td>
-    </ng-container>
+  <!-- address column -->
+  <ng-container matColumnDef="address">
+    <th class="address" mat-header-cell *matHeaderCellDef>住所</th>
+    <td class="address" mat-cell *matCellDef="let element">
+      {{ element.address }}
+    </td>
+  </ng-container>
 
-    <!-- postCode column -->
-    <ng-container matColumnDef="postCode">
-      <th class="postCode" mat-header-cell *matHeaderCellDef>郵便番号</th>
-      <td class="postCode" mat-cell *matCellDef="let element">{{ element.postCode }}</td>
-    </ng-container>
+  <!-- phoneNumber column -->
+  <ng-container matColumnDef="phoneNumber">
+    <th class="phoneNumber" mat-header-cell *matHeaderCellDef>電話番号</th>
+    <td class="phoneNumber" mat-cell *matCellDef="let element">
+      {{ element.phoneNumber }}
+    </td>
+  </ng-container>
 
-    <!-- address column -->
-    <ng-container matColumnDef="address">
-      <th class="address" mat-header-cell *matHeaderCellDef>住所</th>
-      <td class="address" mat-cell *matCellDef="let element">{{ element.address }}</td>
-    </ng-container>
+  <!-- faxNumber column -->
+  <ng-container matColumnDef="faxNumber">
+    <th class="faxNumber" mat-header-cell *matHeaderCellDef>ファックス番号</th>
+    <td class="faxNumber" mat-cell *matCellDef="let element">
+      {{ element.faxNumber }}
+    </td>
+  </ng-container>
 
-    <!-- phoneNumber column -->
-    <ng-container matColumnDef="phoneNumber">
-      <th class="phoneNumber" mat-header-cell *matHeaderCellDef>電話番号</th>
-      <td class="phoneNumber" mat-cell *matCellDef="let element">{{ element.phoneNumber }}</td>
-    </ng-container>
+  <!-- leadTime column -->
+  <ng-container matColumnDef="leadTime">
+    <th class="leadTime" mat-header-cell *matHeaderCellDef>リードタイム</th>
+    <td class="leadTime" mat-cell *matCellDef="let element">
+      {{ element.leadTime }}
+    </td>
+  </ng-container>
 
-    <!-- faxNumber column -->
-    <ng-container matColumnDef="faxNumber">
-      <th class="faxNumber" mat-header-cell *matHeaderCellDef>ファックス番号</th>
-      <td class="faxNumber" mat-cell *matCellDef="let element">{{ element.faxNumber }}</td>
-    </ng-container>
+  <!-- routeCode column -->
+  <ng-container matColumnDef="routeCode">
+    <th class="routeCode" mat-header-cell *matHeaderCellDef>ルート</th>
+    <td class="routeCode" mat-cell *matCellDef="let element">
+      {{ element.routeCode }}
+    </td>
+  </ng-container>
 
-    <!-- leadTime column -->
-    <ng-container matColumnDef="leadTime">
-      <th class="leadTime" mat-header-cell *matHeaderCellDef>リードタイム</th>
-      <td class="leadTime" mat-cell *matCellDef="let element">{{ element.leadTime }}</td>
-    </ng-container>
+  <!-- courseCode column -->
+  <ng-container matColumnDef="courseCode">
+    <th class="courseCode" mat-header-cell *matHeaderCellDef>コース</th>
+    <td class="courseCode" mat-cell *matCellDef="let element">
+      {{ element.courseCode }}
+    </td>
+  </ng-container>
 
-    <!-- routeCode column -->
-    <ng-container matColumnDef="routeCode">
-      <th class="routeCode" mat-header-cell *matHeaderCellDef>ルート</th>
-      <td class="routeCode" mat-cell *matCellDef="let element">{{ element.routeCode }}</td>
-    </ng-container>
+  <!-- courseCode column -->
+  <ng-container matColumnDef="delete" [stickyEnd]="true">
+    <th class="courseCode" mat-header-cell *matHeaderCellDef>コース</th>
+    <td class="courseCode" mat-cell *matCellDef="let element">
+      <mat-icon
+        style="cursor: pointer"
+        class="delete"
+        svgIcon="icon-delete-red"
+      ></mat-icon>
+    </td>
+  </ng-container>
 
-    <!-- courseCode column -->
-    <ng-container matColumnDef="courseCode">
-      <th class="courseCode" mat-header-cell *matHeaderCellDef>コース</th>
-      <td class="courseCode" mat-cell *matCellDef="let element">{{ element.courseCode }}</td>
-    </ng-container>
-
-    <tr mat-header-row *matHeaderRowDef="columns"></tr>
-  <tr mat-row *matRowDef="let row; columns: columns;"></tr>
-  </table>
+  <tr mat-header-row *matHeaderRowDef="columns"></tr>
+  <tr mat-row *matRowDef="let row; columns: columns"></tr>
+</table>

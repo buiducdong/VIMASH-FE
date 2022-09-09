@@ -1,116 +1,83 @@
-.mat-elevation-z8 {
+::ng-deep.mat-elevation-z8 {
   width: 100%;
-  background-color: #FFFFFF;
+  background-color: #ffffff;
+  overflow-x: scroll;
+  margin-bottom: 50px;
+  min-width: 1200px;
 }
-.mat-header-cell{
-  border-bottom: 1px solid #D6D6D6;
+.mat-header-cell {
+  border-bottom: 1px solid #d6d6d6;
   width: 79px;
   height: 38px;
-  font-family: 'Noto Sans JP';
+  font-family: "Noto Sans JP";
   font-style: normal;
   font-weight: 700;
   font-size: 13px;
   color: #485764;
-
 }
-.mat-cell{
-font-family: 'Noto Sans JP';
-font-style: normal;
-font-weight: 400;
-font-size: 13px;
-color: #485764;
-border-bottom: 1px solid #F2F2F2;
+.mat-cell {
+  font-family: "Noto Sans JP";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 13px;
+  color: #485764;
+  border-bottom: 1px solid #f2f2f2;
 }
-.No{
+.No {
   width: 32px;
   height: 38px;
   padding: 8px 0px 10px 16px;
   margin-right: 33px;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-
 }
-.customerCode{
-  width: 80px;
+.customerCode {
+  width: 120px;
   height: 38px;
-  padding: 8px 0px 10px 0px ;
+  padding: 8px 0px 10px 0px;
   margin-left: 33px;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
+  z-index: -1;
 }
-.customerName{
+.customerName {
   width: 240px;
   height: 38px;
-  padding: 8px 0px 10px 0px ;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
+  padding: 8px 0px 10px 0px;
 }
-.picName{
+.picName {
   width: 120px;
   height: 38px;
-  padding: 8px 0px 10px 0px ;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
+  padding: 8px 0px 10px 0px;
 }
-.postCode{
+.postCode {
   width: 80px;
   height: 38px;
-  padding: 8px 0px 10px 0px ;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-
+  padding: 8px 0px 10px 0px;
 }
-.address{
+.address {
   width: 400px;
   height: 38px;
-  padding: 8px 0px 10px 0px ;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
+  padding: 8px 0px 10px 0px;
 }
-.phoneNumber{
+.phoneNumber {
   width: 120px;
   height: 38px;
-  padding: 8px 0px 10px 0px ;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
+  padding: 8px 0px 10px 0px;
 }
-.faxNumber{
+.faxNumber {
   width: 120px;
   height: 38px;
-  padding: 8px 0px 10px 0px ;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-
+  padding: 8px 0px 10px 0px;
 }
-.leadTime{
+.leadTime {
   width: 80px;
   height: 38px;
-  padding: 8px 0px 10px 0px ;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
+  padding: 8px 0px 10px 0px;
 }
-.routeCode{
+.routeCode {
   width: 160px;
   height: 38px;
-  padding: 8px 0px 10px 0px ;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
+  padding: 8px 0px 10px 0px;
 }
-.courseCode{
+.courseCode {
   width: 160px;
   height: 38px;
-  padding: 8px 0px 10px 0px ;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
+  padding: 8px 0px 10px 0px;
 }

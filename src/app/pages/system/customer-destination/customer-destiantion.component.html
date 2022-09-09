@@ -50,7 +50,9 @@
       </div>
     </div>
     <div class="table">
-      <datatable-customer></datatable-customer>
+      <datatable-customer
+        [dataTable]="listdata.length > 0 ? listdata : 'data null'"
+      ></datatable-customer>
     </div>
   </div>
 </div>
