@@ -38,11 +38,11 @@ export class DatatableCustomer implements OnInit {
   }
 
   getCustomerTable() {
-    const http = environment.API_SERVICE + "/api/customer"
+    const http = environment.API_SERVICE + "/api/customers"
     this.httpService.get(http).subscribe((res) => {
-      console.log(res.data);
-      this.Customer = res.data.results;
-      this.dataSource  = new MatTableDataSource<customer>(res.data.results);
+      console.log(res.ResultBean.data);
+      this.Customer = res.ResultBean.data.results;
+      this.dataSource  = new MatTableDataSource<customer>(res.ResultBean.data.results);
       this.dataSource.paginator = this.paginator;
     });
   }
