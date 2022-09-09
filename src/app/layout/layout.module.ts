@@ -10,6 +10,7 @@ import { RouterModule } from '@angular/router';
 import { FooterComponent } from './component/footer/footer.component';
 import { HeaderComponent } from './component/header/header.component';
 import { SideNavComponent } from './component/side-nav/side-nav.component';
+import {MatListModule} from '@angular/material/list';
 
 @NgModule({
   declarations: [FooterComponent, SideNavComponent, HeaderComponent],
@@ -20,6 +21,7 @@ import { SideNavComponent } from './component/side-nav/side-nav.component';
     RouterModule,
     MatIconModule,
     MatFormFieldModule,
+    MatListModule
   ],
   exports: [
     FooterComponent,
@@ -28,6 +30,7 @@ import { SideNavComponent } from './component/side-nav/side-nav.component';
     HeaderComponent,
     MatFormFieldModule,
     MatIconModule,
+    MatListModule
   ],
   providers: [
     {

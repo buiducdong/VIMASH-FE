@@ -1,1 +1,212 @@
-<p>customer-destination-detail works!</p>
+<div class="container">
+    <div class="box-customer">
+        <div class="button-customer">
+            <div class="button-customer-left">
+                <button routerLink="/system/customer">
+                    <svg width="9" height="13" viewBox="0 0 9 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M1.05469 5.8125C0.808594 6.05859 0.808594 6.46875 1.05469 6.71484L6.35938 
+                        12.0469C6.63281 12.293 7.04297 12.293 7.28906 12.0469L7.91797 11.418C8.16406 11.1719
+                         8.16406 10.7617 7.91797 10.4883L3.70703 6.25L7.91797 2.03906C8.16406 1.76562 8.16406 
+                         1.35547 7.91797 1.10938L7.28906 0.480469C7.04297 0.234375 6.63281 0.234375 6.35938
+                          0.480469L1.05469 5.8125Z" fill="#4392BB"/>
+                        </svg>
+                        
+                    戻る
+                </button>
+            </div>
+            <div class="button-customer-right">
+                <button class="button-delete-customer">
+                    <svg width="13" height="13" viewBox="0 0 13 14" fill="none"
+                     xmlns="http://www.w3.org/2000/svg"> <path d="M11.7812 1.4375H8.73438L8.48047 
+                     0.980469C8.37891 0.777344 8.17578 0.625 7.94727 0.625H5.02734C4.79883 0.625 4.5957 0.777344
+                      4.49414 0.980469L4.26562 1.4375H1.21875C0.990234 1.4375 0.8125 1.64062 0.8125
+                       1.84375V2.65625C0.8125 2.88477 0.990234 3.0625 1.21875 3.0625H11.7812C11.9844 3.0625 
+                       12.1875 2.88477 12.1875 2.65625V1.84375C12.1875 1.64062 11.9844 1.4375 11.7812 
+                       1.4375ZM2.1582 12.4824C2.18359 13.1426 2.7168 13.625 3.37695 13.625H9.59766C10.2578
+                        13.625 10.791 13.1426 10.8164 12.4824L11.375 3.875H1.625L2.1582 12.4824Z" fill="white"/> 
+                    </svg>
+                    削除
+                </button>
+                <button class="button-restart-customer" > 
+                    <svg width="14" height="14" viewBox="0 0 14 15" fill="#4392BB" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12.0312 0.605469L12.1406 2.875C10.9102 1.39844 9.05078 0.46875 7 0.46875C6.97266
+                     0.46875 6.97266 0.46875 6.97266 0.46875C3.66406 0.46875 0.902344 2.84766 0.328125
+                      5.99219C0.328125 6.01953 0.328125 6.04688 0.328125 6.07422C0.328125 6.23828 0.464844 
+                      6.375 0.65625 6.375H1.99609C2.13281 6.375 2.26953 6.29297 2.29688 6.12891C2.81641 4.02344
+                       4.70312 2.46484 6.97266 2.46484C8.64062 2.46484 10.1172 3.28516 10.9648 4.57031L8.20312
+                        4.43359H8.17578C8.01172 4.43359 7.84766 4.59766 7.84766 4.76172V6.07422C7.84766 6.23828
+                         8.01172 6.40234 8.17578 6.40234H13.6719C13.8359 6.40234 14 6.23828 14 
+                         6.07422V0.578125C14 0.414062 13.8359 0.25 13.6719 0.25H12.3594C12.1953 0.277344 
+                         12.0312 0.414062 12.0312 0.578125C12.0312 0.605469 12.0312 0.605469 12.0312
+                          0.605469ZM6.97266 12.0625C5.30469 12.0625 3.85547 11.2422 2.98047 9.95703L5.76953
+                           10.0938H5.79688C5.96094 10.0938 6.125 9.92969 6.125 9.76562V8.45312C6.125 8.28906
+                            5.96094 8.125 5.79688 8.125H0.328125C0.136719 8.125 0 8.28906 0 8.45312V13.9219C0 
+                            14.1133 0.136719 14.25 0.328125 14.25H1.61328C1.77734 14.25 1.94141 14.1133 1.94141 
+                            13.9219L1.83203 11.6523C3.0625 13.1289 4.92188 14.0586 6.97266 14.0586V14.0312C10.2812 14.0312 13.043 11.6797 13.6445 8.53516C13.6445 8.50781 13.6445 8.48047 13.6445 8.45312C13.6445 8.28906 13.5078 8.125 13.3164 8.125H11.9766C11.8125 8.15234 11.7031 8.23438 11.6484 8.39844C11.1562 10.5039 9.24219 12.0625 6.97266 12.0625Z" fill="#4392BB"/>
+                    </svg>
+                        
+                    再表示
+                </button>
+                <button class="button-save-customer" (click)="save()" mat-raised-button [disabled]="isDisabled">
+                    <svg width="13" height="12" viewBox="0 0 13 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M11.8066 2.92578L9.69922 0.818359C9.4707 0.589844 9.16602 0.4375 8.83594 0.4375H2.03125C1.3457 0.4375 0.8125 0.996094 0.8125 1.65625V10.5938C0.8125 11.2793 1.3457 11.8125 2.03125 11.8125H10.9688C11.6289 11.8125 12.1875 11.2793 12.1875 10.5938V3.78906C12.1875 3.45898 12.0352 3.1543 11.8066 2.92578ZM6.5 10.1875C5.58594 10.1875 4.875 9.47656 4.875 8.5625C4.875 7.67383 5.58594 6.9375 6.5 6.9375C7.38867 6.9375 8.125 7.67383 8.125 8.5625C8.125 9.47656 7.38867 10.1875 6.5 10.1875ZM8.9375 2.46875V5.00781C8.9375 5.18555 8.78516 5.3125 8.63281 5.3125H2.74219C2.56445 5.3125 2.4375 5.18555 2.4375 5.00781V2.36719C2.4375 2.21484 2.56445 2.0625 2.74219 2.0625H8.53125C8.60742 2.0625 8.68359 2.11328 8.75977 2.16406L8.83594 2.24023C8.88672 2.31641 8.9375 2.39258 8.9375 2.46875Z" fill="white"/>
+                        </svg>
+                        
+                    保存
+                </button>
+            </div>
+            
+        </div>
+        <form class="form-customer" [formGroup]="formCustomer" (ngSubmit)="save()">
+            <div class="row-top-input">
+                <div class="row w-93">
+                    <mat-label class="lbl-input">
+                        出荷先コード {{formCustomer.valid}}</mat-label>
+                  <mat-form-field>
+                    <input type="text" required formControlName="customerCode" ng-model="customerCode" />
+                  </mat-form-field>
+                </div>
+                <div class="row w-312">
+                    <mat-label class="lbl-input">
+                        名称</mat-label>
+                  <mat-form-field>
+                    <input
+                           autocomplete="off"
+                           formControlName="customerName"/>
+                  </mat-form-field>
+                </div>
+                <div class="row w-202">
+                    <mat-label class="lbl-input">
+                        担当者</mat-label>
+                  <mat-form-field>
+                    <input 
+                           autocomplete="off"
+                           formControlName="createBy"/>
+                  </mat-form-field>
+                </div>
+                <div class="row w-203">
+                    <mat-label class="lbl-input">
+                        電話番号</mat-label>
+                  <mat-form-field>
+                    <input matInput
+                           autocomplete="off"
+                           formControlName="phoneNumber"/>
+                  </mat-form-field>
+                </div>
+                <div class="row w-203">
+                    <mat-label class="lbl-input">
+                        ファックス番号</mat-label>
+                  <mat-form-field>
+                    <input matInput
+                           autocomplete="off"
+                           formControlName="faxNumber"/>
+                  </mat-form-field>
+                </div>
+            </div>
+            <div class="row-top-input">
+                <div class="row w-93">
+                    <mat-label class="lbl-input">
+                        リードタイム</mat-label>
+                  <mat-form-field>
+                    <input matInput
+                           autocomplete="off"
+                           formControlName="leadTime"/>
+                  </mat-form-field>
+                </div>
+                <div class="row w-257">
+                    <mat-label class="lbl-input">
+                        ルートコード</mat-label>
+                        <mat-form-field appearance="fill">
+                            <mat-label>Favorite food</mat-label>
+                            <select name="" id="" formControlName="routeCode">
+                                <option value="1">value option 1</option>
+                                <option value="1">value option 1</option>
+                                <option value="1">value option 1</option>
+                                <option value="1">value option 1</option>
+                            </select>
+                          </mat-form-field>
+                </div>
+                <div class="row w-257">
+                    <mat-label class="lbl-input">
+                        コースコード</mat-label>
+                        <mat-form-field appearance="fill">
+                            <mat-label>Favorite food</mat-label>
+                            <select name="" id="" formControlName="courseCode">
+                                <option value="1">value option 1</option>
+                                <option value="1">value option 1</option>
+                                <option value="1">value option 1</option>
+                                <option value="1">value option 1</option>
+                            </select>
+                          </mat-form-field>
+                </div>
+                <div class="row w-93">
+                    <mat-label class="lbl-input">
+                        郵便番号</mat-label>
+                  <mat-form-field>
+                    <input matInput
+                           autocomplete="off"
+                           formControlName="postCode"/>
+                  </mat-form-field>
+                </div>
+                
+                <div class="flex-address">
+                    <div class="flex-address-top">
+                        <div class="row w-166">
+                            <mat-label class="lbl-input">
+                                住所</mat-label>
+                          <mat-form-field>
+                            <input matInput
+                                   autocomplete="off"
+                                   readonly
+                                   formControlName="address1"/>
+                          </mat-form-field>
+                        </div>
+                        <div class="row w-166">
+                            <mat-label class="lbl-input">
+                                 </mat-label>
+                          <mat-form-field>
+                            <input matInput
+                                    readonly
+                                   autocomplete="off"
+                                   formControlName="address2"/>
+                          </mat-form-field>
+                        </div>
+                        <div class="row w-166">
+                            <mat-label class="lbl-input">
+                                 </mat-label>
+                          <mat-form-field>
+                            <input matInput
+                            readonly
+                                   autocomplete="off"
+                                   formControlName="address3"/>
+                          </mat-form-field>
+                        </div>
+                        
+                    </div>
+                    <div class="row w-530">
+                        <mat-label class="lbl-input">
+                             </mat-label>
+                      <mat-form-field>
+                        <input matInput
+                               autocomplete="off"
+                               formControlName="address4"/>
+                      </mat-form-field>
+                    </div>
+                </div>
+                
+            </div>
+            <div class="row-top-input">
+                <div class="row w-639">
+                    <mat-label class="lbl-input">
+                        摘要</mat-label>
+                  <mat-form-field >
+                    <input matInput
+                           autocomplete="off"style="height: 64px;"
+                           formControlName="notes"/>
+                  </mat-form-field>
+                </div>
+                
+            </div>
+        </form>
+    </div>
+</div>

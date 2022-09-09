@@ -9,6 +9,9 @@ import { DatatableCustomer } from './customer-destination/datatable-customer/dat
 import { MatTableModule } from '@angular/material/table';
 import { MatSliderModule } from '@angular/material/slider';
 import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatSelectModule } from '@angular/material/select';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { MatInputModule } from '@angular/material/input';
 
 @NgModule({
   declarations: [
@@ -24,6 +27,11 @@ import { MatFormFieldModule } from '@angular/material/form-field';
     MatTableModule,
     MatSliderModule,
     MatFormFieldModule,
+    MatSelectModule,
+    FormsModule,
+    ReactiveFormsModule,
+    //    MatFormFieldModule,
+    //    MatInputModule
   ],
   providers: [],
   bootstrap: [SystemComponent]
