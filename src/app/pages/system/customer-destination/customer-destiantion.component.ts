@@ -12,22 +12,38 @@ export class CustomerDestiantionComponent implements OnInit {
   constructor(private httpService: HttpService) {
   }
   serchRequest: ISearchRequest = {};
-  payload = JSON.stringify({ name: "1" });
 
   listdata = [];
   ngOnInit(): void {
     this.getCustomerTable();
   }
 
+  disableSearch = false
   getCustomerTable() {
+
     const http = environment.API_SERVICE + "/api/customers"
-    this.httpService.get(http, this.serchRequest).subscribe(data => console.log(data.ResultBean.data.results))
+    this.httpService.get(http, this.serchRequest).subscribe(result => {
+      this.listdata = result.ResultBean.data.results
+      console.log(this.listdata)
+    })
+
   }
 
   searchCustomerTable() {
-    this.getCustomerTable()
+    if (this.serchRequest.name != null && this.serchRequest.name.length > 0 || (this.serchRequest.code1 != null && this.serchRequest.code2 != null)) {
+
+      const http = environment.API_SERVICE + "/api/customers"
+      this.httpService.get(http, this.serchRequest).subscribe(result => {
+        this.listdata = result.ResultBean.data.results
+        console.log(this.listdata)
+      })
+    }
+    this.clearInput()
+  }
+
+  clearInput() {
     this.serchRequest.name = '';
-    this.serchRequest.code1 = null;
-    this.serchRequest.code2 = null;
+    this.serchRequest.code1 = '';
+    this.serchRequest.code2 = '';
   }
 }

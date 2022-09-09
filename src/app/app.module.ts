@@ -5,23 +5,24 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
-import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http';
 import { LayoutModule } from './layout/layout.module';
 import { SystemModule } from './pages/system/system.module';
 import { ToastrModule } from 'ngx-toastr';
-import { CoreModule, HttpLoaderFactory } from './core/core.module';
+import { CoreModule } from './core/core.module';
 import { CommonAppModule } from './common/common.module';
 
 import { MatTableModule } from '@angular/material/table';
 
-
-
-import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
+import { AboutComponent } from './pages/about/about.component';
+import { IssueComponent } from './pages/issue/issue.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
+    AboutComponent,
+    IssueComponent,
   ],
   imports: [
     BrowserModule,

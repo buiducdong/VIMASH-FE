@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { navData } from './nav-data';
 
 @Component({
   selector: 'app-side-nav',
@@ -11,5 +12,7 @@ export class SideNavComponent implements OnInit {
 
   ngOnInit(): void {
   }
+
+  navData = navData;
 
 }

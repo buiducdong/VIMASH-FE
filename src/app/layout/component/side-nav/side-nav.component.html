@@ -3,12 +3,14 @@
     <mat-icon svgIcon="logo"></mat-icon>
   </div>
   <ul>
-    <li class="active">マスタ</li>
-    <li>入庫</li>
-    <li>出庫</li>
-    <li>在庫</li>
-    <li>棚卸</li>
-    <li>日次</li>
+    <li
+      *ngFor="let data of navData"
+      [routerLink]="[data.routeLink]"
+      routerLinkActive="active"
+      [routerLinkActiveOptions]="{ exact: true }"
+    >
+      {{ data.label }}
+    </li>
     <li>EDI</li>
   </ul>
 </div>

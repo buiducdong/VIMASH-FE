@@ -17,10 +17,28 @@
       <input name="name" [(ngModel)]="serchRequest.name" type="text" />
     </div>
     <div class="group-button">
-      <button class="search-btn" (click)="searchCustomerTable()">
+      <button
+        class="search-btn"
+        [disabled]="
+          serchRequest.name || (serchRequest.code1 && serchRequest.code2)
+            ? false
+            : true
+        "
+        (click)="searchCustomerTable()"
+      >
         {{ "common.button.search" | translate }}
       </button>
-      <button class="clear-btn">{{ "common.button.clear" | translate }}</button>
+      <button
+        [disabled]="
+          serchRequest.name || serchRequest.code1 || serchRequest.code2
+            ? false
+            : true
+        "
+        (click)="clearInput()"
+        class="clear-btn"
+      >
+        {{ "common.button.clear" | translate }}
+      </button>
     </div>
   </div>
   <div class="table-group">

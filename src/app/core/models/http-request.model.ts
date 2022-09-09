@@ -1,7 +1,7 @@
 export class ISearchRequest {
   page?: number;
   size?: number;
-  name?: string | null;
-  code1?: string | null;
-  code2?: string | null;
+  name?: string;
+  code1?: string;
+  code2?: string;
 }
