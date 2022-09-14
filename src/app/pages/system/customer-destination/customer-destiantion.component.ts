@@ -24,7 +24,7 @@ export class CustomerDestiantionComponent implements OnInit {
 
     const http = environment.API_SERVICE + "/api/customers"
     this.httpService.get(http, this.serchRequest).subscribe(result => {
-      this.listdata = result.ResultBean.data.results
+      this.listdata = result.data.results
       console.log(this.listdata)
     })
 
@@ -35,7 +35,7 @@ export class CustomerDestiantionComponent implements OnInit {
 
       const http = environment.API_SERVICE + "/api/customers"
       this.httpService.get(http, this.serchRequest).subscribe(result => {
-        this.listdata = result.ResultBean.data.results
+        this.listdata = result.data.results
         console.log(this.listdata)
       })
     }

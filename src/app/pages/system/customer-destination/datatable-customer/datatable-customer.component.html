@@ -1,3 +1,4 @@
+<div>
 <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
   <!-- position column -->
   <ng-container matColumnDef="position" [sticky]="true" [stickyEnd]="true">
@@ -92,6 +93,7 @@
     <th class="courseCode" mat-header-cell *matHeaderCellDef>コース</th>
     <td class="courseCode" mat-cell *matCellDef="let element">
       <mat-icon
+       (click)="deleteCustomer(element.customerId)"
         style="cursor: pointer"
         class="delete"
         svgIcon="icon-delete-red"
@@ -102,3 +104,14 @@
   <tr mat-header-row *matHeaderRowDef="columns"></tr>
   <tr mat-row *matRowDef="let row; columns: columns"></tr>
 </table>
+<div class="btn-page">
+  <button class="btn-show" type="button" (click)="onClick()">
+    <mat-icon
+    style="cursor: pointer"
+    class="showMore"
+    svgIcon="icon-show-more"
+  ></mat-icon>
+    更に表示</button>
+</div>
+
+</div>
