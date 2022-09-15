@@ -1,5 +1,5 @@
 /* You can add global styles to this file, and also import other style files */
-
+@import '~ngx-toastr/toastr.css';
 html,
 body {
   height: 100%;
@@ -17,4 +17,28 @@ li {
   cursor: default;
   text-decoration: none;
   color: inherit;
+}
+
+h1 {
+  font-size: 38px;
+}
+
+h2 {
+  font-size: 32px;
+}
+
+h3 {
+  font-size: 28px;
+}
+
+h4 {
+  font-size: 24px;
+}
+
+h5 {
+  font-size: 20px;
+}
+
+h6 {
+  font-size: 16px;
 }

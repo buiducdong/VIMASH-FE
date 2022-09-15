@@ -1,15 +1,13 @@
 .container {
-  padding-left: 10px;
-
   .search {
     box-sizing: border-box;
-    margin-top: 10px;
     height: 76px;
     margin-right: 10px;
     background-color: #fbfeff;
     padding: 12px 16px;
     display: flex;
     align-items: flex-end;
+    margin-bottom: 0px;
 
     .input-group {
       display: flex;
@@ -147,4 +145,5 @@
       }
     }
   }
+       
 }

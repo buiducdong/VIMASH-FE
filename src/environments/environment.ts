@@ -13,9 +13,9 @@ export const environment = {
     defaultLanguage: 'ja',
   },
   HOME_PAGE: 'http://localhost:4200',
-  API_SERVICE: 'http://localhost:8080',
+  API_SERVICE: 'http://localhost:8081',
   API_AUTH: 'http://localhost:8086',
-  pageSize: 20,
+  pageSize: 10,
   pageIndex: 1,
 };
 
