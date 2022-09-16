@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { INavbar } from './Inavbar';
 import { navData } from './nav-data';
 
 @Component({
@@ -8,7 +10,7 @@ import { navData } from './nav-data';
 })
 export class SideNavComponent implements OnInit {
 
-  constructor() { }
+  constructor(public router: Router) {}
 
   ngOnInit(): void {
   }
@@ -23,6 +25,10 @@ export class SideNavComponent implements OnInit {
       }
     }
     )
+  }
+
+  getActiveClass(data: INavbar): String {
+    return this.router.url.includes(data.routeLink) ? "active" : ""
   }
 
 }

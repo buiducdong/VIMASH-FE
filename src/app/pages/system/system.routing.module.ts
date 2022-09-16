@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AboutComponent } from '../about/about.component';
+import { AbouttComponent } from '../about/child2.component';
 import { IssueComponent } from '../issue/issue.component';
 import { CustomerDestinationDetailComponent } from './customer-destination-detail/customer-destination-detail.component';
 import { CustomerDestiantionComponent } from './customer-destination/customer-destiantion.component';
@@ -17,7 +18,6 @@ const routes: Routes = [
       { path: 'detail', component: CustomerDestinationDetailComponent },
       {
         path: 'warehouse',
-        component: AboutComponent,
         children: [
           {
             path: 'child1',
@@ -25,7 +25,7 @@ const routes: Routes = [
           },
           {
             path: 'child2',
-            component: AboutComponent
+            component: AbouttComponent
           },
         ]
       },
@@ -33,6 +33,19 @@ const routes: Routes = [
         path: 'issue',
         component: IssueComponent
       },
+      {
+        path: 'stock',
+        component: AbouttComponent
+      },
+      {
+        path: 'inventory',
+        component: IssueComponent
+      },
+      {
+        path: 'daily',
+        component: IssueComponent
+      },
+
     ]
   }
 ];

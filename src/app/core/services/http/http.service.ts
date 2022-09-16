@@ -11,7 +11,7 @@ export class HttpService {
   public constructor(protected http: HttpClient) { }
 
   public get(url: string, payload: ISearchRequest): Observable<any> {
-    return this.http.post<HttpClientResponse>(url, payload).pipe(
+    return this.http.get<HttpClientResponse>(`${url}?page=${payload.page}&size=${payload.size}&name=${payload.name}&code1=${payload.code1}&code2=${payload.code2}`).pipe(
       tap(response => response)
     )
   }

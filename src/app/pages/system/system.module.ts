@@ -13,13 +13,15 @@ import { MatSelectModule } from '@angular/material/select';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatInputModule } from '@angular/material/input';
 import { CommonModule } from '@angular/common';
+import { AbouttComponent } from '../about/child2.component';
 
 @NgModule({
   declarations: [
     CustomerDestiantionComponent,
     CustomerDestinationDetailComponent,
     SystemComponent,
-    DatatableCustomer
+    DatatableCustomer,
+    AbouttComponent
   ],
   imports: [
     SystemRoutingModule,

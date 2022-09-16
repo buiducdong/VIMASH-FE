@@ -12,7 +12,13 @@ export class CustomerDestiantionComponent implements OnInit {
   public constructor(private httpService: HttpService) {
     this.getCustomerTable()
   }
-  serchRequest: ISearchRequest = {};
+  serchRequest: ISearchRequest = {
+    page: 1,
+    size: 10,
+    name: "",
+    code1: "",
+    code2: ""
+  };
 
   listdata = [];
   public ngOnInit() {

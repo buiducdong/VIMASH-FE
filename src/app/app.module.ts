@@ -16,6 +16,7 @@ import { MatTableModule } from '@angular/material/table';
 
 import { AboutComponent } from './pages/about/about.component';
 import { IssueComponent } from './pages/issue/issue.component';
+import { AbouttComponent } from './pages/about/child2.component';
 
 
 @NgModule({
@@ -23,6 +24,7 @@ import { IssueComponent } from './pages/issue/issue.component';
     AppComponent,
     AboutComponent,
     IssueComponent,
+    
   ],
   imports: [
     BrowserModule,

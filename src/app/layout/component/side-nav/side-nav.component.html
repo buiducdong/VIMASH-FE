@@ -15,7 +15,7 @@
         style="height: 100%; width: 100%"
         *ngIf="data.items && data.items.length > 0"
       >
-        <a>
+        <a [ngClass]="getActiveClass(data)">
           {{ data.label }}
         </a>
 
