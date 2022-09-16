@@ -13,6 +13,16 @@ export class SideNavComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  navData = navData;
+  navbarData = navData;
+  multiple: boolean = false;
+
+  expandedNavItem(data: any): void {
+    this.navbarData.find(nav => {
+      if (nav.label === data.label) {
+        data.expanded = !data.expanded
+      }
+    }
+    )
+  }
 
 }

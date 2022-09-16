@@ -17,7 +17,17 @@ const routes: Routes = [
       { path: 'detail', component: CustomerDestinationDetailComponent },
       {
         path: 'warehouse',
-        component: AboutComponent
+        component: AboutComponent,
+        children: [
+          {
+            path: 'child1',
+            component: AboutComponent
+          },
+          {
+            path: 'child2',
+            component: AboutComponent
+          },
+        ]
       },
       {
         path: 'issue',

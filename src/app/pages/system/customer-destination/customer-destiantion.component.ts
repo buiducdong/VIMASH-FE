@@ -9,25 +9,23 @@ import { environment } from '../../../../environments/environment'
   styleUrls: ['./customer-destiantion.component.scss'],
 })
 export class CustomerDestiantionComponent implements OnInit {
-  constructor(private httpService: HttpService) {
+  public constructor(private httpService: HttpService) {
+    this.getCustomerTable()
   }
   serchRequest: ISearchRequest = {};
 
   listdata = [];
-  ngOnInit(): void {
-    this.getCustomerTable();
-    console.log("customer render")
+  public ngOnInit() {
+    this.getCustomerTable()
   }
 
   disableSearch = false
   getCustomerTable() {
-
     const http = environment.API_SERVICE + "/api/customers"
     this.httpService.get(http, this.serchRequest).subscribe(result => {
       this.listdata = result.ResultBean.data.results
       console.log(this.listdata)
     })
-
   }
 
   searchCustomerTable() {
@@ -47,4 +45,5 @@ export class CustomerDestiantionComponent implements OnInit {
     this.serchRequest.code1 = '';
     this.serchRequest.code2 = '';
   }
+
 }

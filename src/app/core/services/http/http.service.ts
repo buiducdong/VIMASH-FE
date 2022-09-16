@@ -12,8 +12,7 @@ export class HttpService {
 
   public get(url: string, payload: ISearchRequest): Observable<any> {
     return this.http.post<HttpClientResponse>(url, payload).pipe(
-      tap(response => response),
-      catchError(error => of(error))
+      tap(response => response)
     )
   }
 }

@@ -12,6 +12,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatSelectModule } from '@angular/material/select';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatInputModule } from '@angular/material/input';
+import { CommonModule } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -30,6 +31,7 @@ import { MatInputModule } from '@angular/material/input';
     MatSelectModule,
     FormsModule,
     ReactiveFormsModule,
+    CommonModule
     //    MatFormFieldModule,
     //    MatInputModule
   ],

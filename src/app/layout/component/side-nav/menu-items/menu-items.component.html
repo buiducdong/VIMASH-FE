@@ -1,0 +1,13 @@
+<ul *ngIf="data.items && data.items.length > 0" class="sublevel-nav">
+  <li *ngFor="let item of data.items" class="sublevel-nav-item">
+    <a
+      class="sublevel-nav-link"
+      *ngIf="!item.items || (item.items && item.items.length === 0)"
+      [routerLink]="item.routeLink"
+      routerLinkActive="active-sublevel"
+      [routerLinkActiveOptions]="{ exact: true }"
+    >
+      {{ item.label }}
+    </a>
+  </li>
+</ul>

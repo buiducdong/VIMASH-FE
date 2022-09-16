@@ -1,4 +1,4 @@
-import { Component, Input, OnInit, ViewChild } from '@angular/core';
+import { Component, Input, OnInit, SimpleChange, ViewChild } from '@angular/core';
 import { HttpService } from 'src/app/core/services/http/http.service';
 import { environment } from '../../../../../environments/environment'
 import { customer } from 'src/app/layout/models/customer.model';
@@ -28,7 +28,8 @@ export class DatatableCustomer implements OnInit {
     'courseCode',
     'delete'
   ];
-  @Input() public dataTable: any;
+  @Input() public dataTable: any = [];
+  customers: any = [];
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
 
@@ -40,17 +41,15 @@ export class DatatableCustomer implements OnInit {
   idTable: number = 1;
 
   ngOnInit(): void {
-    this.getCustomerTable();
-    console.log(this.dataTable)
-    console.log('tabel render')
   }
 
-  getCustomerTable() {
-    const http = environment.API_SERVICE + "/api/customers"
-    this.httpService.get(http, this.serchRequets).subscribe((res) => {
-      this.Customer = res.ResultBean.data.results;
-      this.dataSource = new MatTableDataSource<customer>(res.ResultBean.data.results);
-      this.dataSource.paginator = this.paginator;
-    });
+  ngOnChanges(changes: SimpleChange): void {
+    this.parseData()
   }
+
+  parseData() {
+    this.customers = this.dataTable
+    this.dataSource = this.customers
+  }
+
 }

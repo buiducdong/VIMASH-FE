@@ -51,7 +51,8 @@
     </div>
     <div class="table">
       <datatable-customer
-        [dataTable]="listdata.length > 0 ? listdata : 'data null'"
+        *ngIf="listdata && listdata.length"
+        [dataTable]="listdata"
       ></datatable-customer>
     </div>
   </div>

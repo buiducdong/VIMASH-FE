@@ -11,9 +11,10 @@ import { FooterComponent } from './component/footer/footer.component';
 import { HeaderComponent } from './component/header/header.component';
 import { SideNavComponent } from './component/side-nav/side-nav.component';
 import {MatListModule} from '@angular/material/list';
+import { MenuItemsComponent } from './component/side-nav/menu-items/menu-items.component';
 
 @NgModule({
-  declarations: [FooterComponent, SideNavComponent, HeaderComponent],
+  declarations: [FooterComponent, SideNavComponent, HeaderComponent, MenuItemsComponent],
   imports: [
     CommonModule,
     ReactiveFormsModule,

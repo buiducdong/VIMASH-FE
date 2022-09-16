@@ -3,13 +3,30 @@
     <mat-icon svgIcon="logo"></mat-icon>
   </div>
   <ul>
-    <li
-      *ngFor="let data of navData"
-      [routerLink]="[data.routeLink]"
-      routerLinkActive="active"
-      [routerLinkActiveOptions]="{ exact: true }"
-    >
-      {{ data.label }}
+    <li *ngFor="let data of navbarData" (click)="expandedNavItem(data)">
+      <a
+        *ngIf="!data.items || (data.items && data.items.length === 0)"
+        [routerLink]="[data.routeLink]"
+        routerLinkActive="active"
+        [routerLinkActiveOptions]="{ exact: true }"
+        >{{ data.label }}</a
+      >
+      <div
+        style="height: 100%; width: 100%"
+        *ngIf="data.items && data.items.length > 0"
+      >
+        <a>
+          {{ data.label }}
+        </a>
+
+        <app-menu-items
+          *ngIf="data.expanded"
+          [multiple]="multiple"
+          [expanded]="data.expanded"
+          [data]="data"
+        >
+        </app-menu-items>
+      </div>
     </li>
     <li>EDI</li>
   </ul>

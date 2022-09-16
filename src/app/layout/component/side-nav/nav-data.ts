@@ -1,4 +1,6 @@
-export const navData = [
+import { INavbar } from "./Inavbar";
+
+export const navData: Array<INavbar> = [
   {
     routeLink: 'customer',
     label: 'マスタ'
@@ -6,6 +8,7 @@ export const navData = [
   {
     routeLink: 'warehouse',
     label: '入庫',
+    expanded: false,
     items: [
       {
         routeLink: 'warehouse/child1',
