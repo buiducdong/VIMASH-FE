@@ -3,7 +3,7 @@
   <!-- position column -->
   <ng-container matColumnDef="position" [sticky]="true" [stickyEnd]="true">
     <th class="No" mat-header-cell *matHeaderCellDef>No.</th>
-    <td class="No" mat-cell *matCellDef="let element; let j = index">
+    <td class="No" mat-cell *matCellDef="let element; let j = index"  >
       {{ j + 1 }}
     </td>
   </ng-container>
@@ -90,7 +90,7 @@
 
   <!-- courseCode column -->
   <ng-container matColumnDef="delete" [stickyEnd]="true">
-    <th class="courseCode" mat-header-cell *matHeaderCellDef>コース</th>
+    <th class="courseCode" mat-header-cell *matHeaderCellDef>操作</th>
     <td class="courseCode" mat-cell *matCellDef="let element">
       <mat-icon
        (click)="deleteCustomer(element.customerId)"
@@ -102,7 +102,7 @@
   </ng-container>
 
   <tr mat-header-row *matHeaderRowDef="columns"></tr>
-  <tr mat-row *matRowDef="let row; columns: columns"></tr>
+  <tr mat-row *matRowDef="let row; columns: columns; let j = index"></tr>
 </table>
 <div class="btn-page">
   <button class="btn-show" type="button" (click)="onClick()">
@@ -113,5 +113,4 @@
   ></mat-icon>
     更に表示</button>
 </div>
-
 </div>

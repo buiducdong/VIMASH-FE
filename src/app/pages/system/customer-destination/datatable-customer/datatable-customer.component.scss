@@ -1,4 +1,4 @@
-::ng-deep.mat-elevation-z8 {
+::ng-deep .mat-elevation-z8 {
   width: 100%;
   background-color: #ffffff;
   overflow-x: scroll;
@@ -7,8 +7,8 @@
   box-shadow: none;
   margin-bottom: 10px;
 }
-.mat-header-cell {
-  border-bottom: 1px solid #d6d6d6;
+::ng-deep .mat-header-cell {
+  border-bottom: 1px solid #FFFFFF;
   width: 79px;
   height: 38px;
   font-family: "Noto Sans JP";
@@ -17,7 +17,7 @@
   font-size: 13px;
   color: #485764;
 }
-.mat-cell {
+::ng-deep .mat-cell {
   font-family: "Noto Sans JP";
   font-style: normal;
   font-weight: 400;
@@ -25,60 +25,59 @@
   color: #485764;
   border-bottom: 1px solid #f2f2f2;
 }
-.No {
+::ng-deep .No {
   width: 40px;
   height: 38px;
   padding: 8px 0px 10px 16px;
   margin-right: 33px;
 }
-.customerCode {
+::ng-deep .customerCode {
   width: 120px;
   height: 38px;
   padding: 8px 0px 10px 0px;
-  margin-left: 33px;
   z-index: -1;
 }
-.customerName {
+::ng-deep .customerName {
   width: 240px;
   height: 38px;
   padding: 8px 0px 10px 0px;
 }
-.picName {
+::ng-deep .picName {
   width: 120px;
   height: 38px;
   padding: 8px 0px 10px 0px;
 }
-.postCode {
+::ng-deep .postCode {
   width: 80px;
   height: 38px;
   padding: 8px 0px 10px 0px;
 }
-.address {
+::ng-deep .address {
   width: 400px;
   height: 38px;
   padding: 8px 0px 10px 0px;
 }
-.phoneNumber {
+::ng-deep .phoneNumber {
   width: 120px;
   height: 38px;
   padding: 8px 0px 10px 0px;
 }
-.faxNumber {
+::ng-deep .faxNumber {
   width: 160px;
   height: 38px;
   padding: 8px 0px 10px 0px;
 }
-.leadTime {
+::ng-deep .leadTime {
   width: 160px;
   height: 38px;
   padding: 8px 0px 10px 0px;
 }
-.routeCode {
+::ng-deep .routeCode {
   width: 160px;
   height: 38px;
   padding: 8px 0px 10px 0px;
 }
-.courseCode {
+::ng-deep .courseCode {
   width: 160px;
   height: 38px;
   padding: 8px 0px 10px 0px;
@@ -119,4 +118,6 @@ font-weight: 900;
 font-size: 14px;
 line-height: 150%;
 }
+
+
 
