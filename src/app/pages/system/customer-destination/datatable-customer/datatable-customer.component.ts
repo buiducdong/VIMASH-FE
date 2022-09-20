@@ -58,7 +58,8 @@ export class DatatableCustomer implements OnInit {
     console.log(this.j);
     const http = environment.API_SERVICE + "/api/customers"
     this.httpService.get(http, this.serchRequets).subscribe((res) => {
-      this.Customer?.push(...res.data.results)
+       this.Customer?.push(...res.data.results)
+        console.log(...res.data.results)
       this.dataSource = new MatTableDataSource<customer>(this.Customer);
     });
   }

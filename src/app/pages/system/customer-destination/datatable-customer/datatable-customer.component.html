@@ -1,7 +1,7 @@
-<div>
+<div class="table-container">
 <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
   <!-- position column -->
-  <ng-container matColumnDef="position" [sticky]="true" [stickyEnd]="true">
+  <ng-container matColumnDef="position">
     <th class="No" mat-header-cell *matHeaderCellDef>No.</th>
     <td class="No" mat-cell *matCellDef="let element; let j = index"  >
       {{ j + 1 }}
@@ -9,7 +9,7 @@
   </ng-container>
 
   <!-- customerId column -->
-  <ng-container matColumnDef="customerCode" [sticky]="true" [stickyEnd]="true">
+  <ng-container matColumnDef="customerCode">
     <th class="customerCode" mat-header-cell *matHeaderCellDef>出荷先コード</th>
     <td class="customerCode" mat-cell *matCellDef="let element">
       {{ element.customerCode }}
@@ -101,9 +101,11 @@
     </td>
   </ng-container>
 
-  <tr mat-header-row *matHeaderRowDef="columns"></tr>
-  <tr mat-row *matRowDef="let row; columns: columns; let j = index"></tr>
+  <tr mat-header-row *matHeaderRowDef="columns; sticky: true"></tr>
+  <tr mat-row *matRowDef="let row; columns: columns"></tr>
 </table>
+
+</div>
 <div class="btn-page">
   <button class="btn-show" type="button" (click)="onClick()">
     <mat-icon
@@ -112,5 +114,4 @@
     svgIcon="icon-show-more"
   ></mat-icon>
     更に表示</button>
-</div>
 </div>

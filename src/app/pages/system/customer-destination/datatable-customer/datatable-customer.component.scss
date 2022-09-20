@@ -1,91 +1,56 @@
 ::ng-deep .mat-elevation-z8 {
   width: 100%;
   background-color: #ffffff;
-  overflow-x: scroll;
   margin-bottom: 50px;
-  min-width: 1200px;
+
   box-shadow: none;
   margin-bottom: 10px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: scroll;
+
+
+}
+::ng-deep .mat-elevation-z8 tr.mat-header-row {
+  height: 30px;
+  th{
+    padding: 0px 15px 0px 5px;
+
+  }
+}
+::ng-deep .mat-elevation-z8 tr.mat-row {
+  height: 38px;
+  td {
+    padding: 0px 15px 0px 5px;
+
+  }
+
 }
 ::ng-deep .mat-header-cell {
   border-bottom: 1px solid #FFFFFF;
-  width: 79px;
-  height: 38px;
   font-family: "Noto Sans JP";
   font-style: normal;
   font-weight: 700;
   font-size: 13px;
   color: #485764;
 }
-::ng-deep .mat-cell {
+.mat-cell {
   font-family: "Noto Sans JP";
-  font-style: normal;
   font-weight: 400;
-  font-size: 13px;
+    font-size: 13px;
+    line-height: 150%;
+    letter-spacing: 0.014em;
   color: #485764;
   border-bottom: 1px solid #f2f2f2;
+  padding: 4px;
 }
-::ng-deep .No {
-  width: 40px;
-  height: 38px;
-  padding: 8px 0px 10px 16px;
-  margin-right: 33px;
-}
-::ng-deep .customerCode {
-  width: 120px;
-  height: 38px;
-  padding: 8px 0px 10px 0px;
-  z-index: -1;
-}
-::ng-deep .customerName {
-  width: 240px;
-  height: 38px;
-  padding: 8px 0px 10px 0px;
-}
-::ng-deep .picName {
-  width: 120px;
-  height: 38px;
-  padding: 8px 0px 10px 0px;
-}
-::ng-deep .postCode {
-  width: 80px;
-  height: 38px;
-  padding: 8px 0px 10px 0px;
-}
-::ng-deep .address {
-  width: 400px;
-  height: 38px;
-  padding: 8px 0px 10px 0px;
-}
-::ng-deep .phoneNumber {
-  width: 120px;
-  height: 38px;
-  padding: 8px 0px 10px 0px;
-}
-::ng-deep .faxNumber {
-  width: 160px;
-  height: 38px;
-  padding: 8px 0px 10px 0px;
-}
-::ng-deep .leadTime {
-  width: 160px;
-  height: 38px;
-  padding: 8px 0px 10px 0px;
-}
-::ng-deep .routeCode {
-  width: 160px;
-  height: 38px;
-  padding: 8px 0px 10px 0px;
-}
-::ng-deep .courseCode {
-  width: 160px;
-  height: 38px;
-  padding: 8px 0px 10px 0px;
-}
+
+
 .btn-page{
   display: flex;
   width: 100%;
-  margin-bottom: 50px;
+  margin-top: 15px;
+  padding-bottom: 30px;
 
 }
 .btn-show{
@@ -118,6 +83,50 @@ font-weight: 900;
 font-size: 14px;
 line-height: 150%;
 }
+table {
+  width: 100%;
+  border-collapse: separate
+}
+.mat-row .mat-cell {
+  cursor: pointer;
+}
+.row {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 15px;
+  margin-left: 10px;
+
+  .col {
+    display: flex;
+    width: 45%;
+  }
+
+  .col.last {
+    margin-right: 10px;
+  }
+
+  .date {
+    margin-right: 10px;
+  }
+}
+.table-container {
+  width: 100%;
+  overflow-y: scroll;
+  overflow-x: scroll;
+}
+.table-container.hidden-scroll {
+  overflow-x: hidden;
+}
+::ng-deep .table-container {
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  width: 100%;
+  display: block;
+  overflow: hidden;
+
+}
+
 
 
 
