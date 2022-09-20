@@ -1,10 +1,25 @@
-::ng-deep.mat-elevation-z8 {
-  width: 100%;
-  background-color: #ffffff;
-  overflow-x: scroll;
-  margin-bottom: 50px;
-  min-width: 1200px;
+
+.table-container {
+  width: calc(100% - 20px);
+  overflow: scroll;
+  height: 550px;
 }
+::ng-deep.table-container .mat-table.mat-elevation-z8 {
+  width: 100%;
+  min-width: 1300px;
+  max-height: 550px;
+  background-color: #ffffff;
+  box-shadow: none;
+}
+
+.mat-table-sticky-border-elem-right {
+  border-left: 1px solid #e0e0e0;
+}
+
+.mat-table-sticky-border-elem-left {
+  border-right: 1px solid #e0e0e0;
+}
+
 .mat-header-cell {
   border-bottom: 1px solid #d6d6d6;
   width: 79px;
@@ -23,61 +38,65 @@
   color: #485764;
   border-bottom: 1px solid #f2f2f2;
 }
-.No {
-  width: 32px;
-  height: 38px;
-  padding: 8px 0px 10px 16px;
-  margin-right: 33px;
+
+tr.mat-row:nth-child(even) {
+  background-color: #FAFEFF;
 }
-.customerCode {
-  width: 120px;
+
+tr.mat-row:hover {
+  background-color: #CFF5FF;
+}
+
+::ng-deep.mat-row:focus {
+  background-color: #ABEEFF;
+}
+
+.mat-header-row > .mat-header-cell {
+  padding: 0;
+}
+.mat-row .mat-cell {
   height: 38px;
-  padding: 8px 0px 10px 0px;
+  padding: 0;
+}
+
+.No {
+  width: 40px;
+  text-align: center;
+}
+
+.customerCode {
+  width: 90px;
   margin-left: 33px;
   z-index: -1;
 }
 .customerName {
   width: 240px;
-  height: 38px;
-  padding: 8px 0px 10px 0px;
 }
 .picName {
   width: 120px;
-  height: 38px;
-  padding: 8px 0px 10px 0px;
 }
 .postCode {
   width: 80px;
-  height: 38px;
-  padding: 8px 0px 10px 0px;
 }
 .address {
-  width: 400px;
-  height: 38px;
-  padding: 8px 0px 10px 0px;
+  width: 200px;
 }
 .phoneNumber {
   width: 120px;
-  height: 38px;
-  padding: 8px 0px 10px 0px;
 }
 .faxNumber {
   width: 120px;
-  height: 38px;
-  padding: 8px 0px 10px 0px;
 }
 .leadTime {
-  width: 80px;
-  height: 38px;
-  padding: 8px 0px 10px 0px;
+  width: 100px;
 }
 .routeCode {
-  width: 160px;
-  height: 38px;
-  padding: 8px 0px 10px 0px;
+  width: 60px;
 }
 .courseCode {
-  width: 160px;
-  height: 38px;
-  padding: 8px 0px 10px 0px;
+  width: 60px;
+}
+.delete {
+  width: 35px;
+  text-align: center;
 }

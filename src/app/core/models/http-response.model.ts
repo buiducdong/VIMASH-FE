@@ -38,3 +38,22 @@ export class DataSearchModel implements DataModel {
     public countRecords: number = 0
   ) { }
 }
+
+
+export class Customer {
+  customerId?: number;
+  customerCode?: string;
+  customerName?: string;
+  picName?: string;
+  leadTime?: string;
+  routeCode?: string;
+  courseCode?: string;
+  phoneNumber?: string;
+  faxNumber?: string;
+  postCode?: string;
+  address1?: string;
+  address2?: string;
+  address3?: string;
+  address4?: string;
+  description?: string;
+}

@@ -9,7 +9,8 @@
       "btn-action": "操作"
     },
     "title": {
-      "title-confirm": "確認"
+      "title-confirm": "確認",
+      "title-conttent": "商品を削除します。よろしいでしょうか"
     },
     "button": {
       "show-more": "更に表示",

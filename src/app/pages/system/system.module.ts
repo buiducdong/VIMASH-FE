@@ -14,6 +14,9 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatInputModule } from '@angular/material/input';
 import { CommonModule } from '@angular/common';
 import { AbouttComponent } from '../about/child2.component';
+import { DeliveryComponent } from './delivery/delivery.component';
+import { ConfirmDialogComponent } from './confirm-dialog/confirm-dialog.component';
+import { ToastrModule } from 'ngx-toastr';
 
 @NgModule({
   declarations: [
@@ -21,7 +24,9 @@ import { AbouttComponent } from '../about/child2.component';
     CustomerDestinationDetailComponent,
     SystemComponent,
     DatatableCustomer,
-    AbouttComponent
+    AbouttComponent,
+    DeliveryComponent,
+    ConfirmDialogComponent
   ],
   imports: [
     SystemRoutingModule,
@@ -33,7 +38,7 @@ import { AbouttComponent } from '../about/child2.component';
     MatSelectModule,
     FormsModule,
     ReactiveFormsModule,
-    CommonModule
+    CommonModule,
     //    MatFormFieldModule,
     //    MatInputModule
   ],

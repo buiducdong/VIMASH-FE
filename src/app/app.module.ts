@@ -17,6 +17,8 @@ import { MatTableModule } from '@angular/material/table';
 import { AboutComponent } from './pages/about/about.component';
 import { IssueComponent } from './pages/issue/issue.component';
 import { AbouttComponent } from './pages/about/child2.component';
+import { TranslateModule } from '@ngx-translate/core';
+import { NotFoundComponent } from './pages/not-found/not-found.component';
 
 
 @NgModule({
@@ -24,7 +26,7 @@ import { AbouttComponent } from './pages/about/child2.component';
     AppComponent,
     AboutComponent,
     IssueComponent,
-    
+    NotFoundComponent,
   ],
   imports: [
     BrowserModule,
@@ -32,7 +34,6 @@ import { AbouttComponent } from './pages/about/child2.component';
     BrowserAnimationsModule,
     HttpClientModule,
     MatTableModule,
-
     // app core, common, dependancy
     CoreModule.forRoot(),
     CommonAppModule.forRoot(),

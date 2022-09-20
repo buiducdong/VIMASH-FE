@@ -7,7 +7,7 @@ import { Localization } from '../../models/localization.model';
   providedIn: 'root'
 })
 export class LocalizationService {
-  public defaultLanguage: string = environment.localization.defaultLanguage;
+  public defaultLanguage: string = "en";
   public supportedLanguages: Array<string> = [];
 
   public constructor(private translateService: TranslateService) { }
@@ -21,7 +21,6 @@ export class LocalizationService {
 
     this.translateService.addLangs(languages);
     this.translateService.setDefaultLang(localization.defaultLanguage);
-
     this.translateService.use(localization.defaultLanguage);
   }
 

@@ -1,0 +1,83 @@
+<div class="delivery">
+    <div class="header">
+        <div class="header__left">
+            <button class="header__left-back">戻る</button>
+        </div>
+        <div class="header__right">
+            <button class="header__right-delete">削除</button>
+            <button (click)="getCustomerById(idCustomer)" class="header__right-refesh">再表示</button>
+            <button class="header__right-save">保存</button>
+        </div>
+    </div>
+    <div class="container-form">
+        <div class="container-form__left">
+            <div class="row-1">
+                <div class="group-input customer-code">
+                    <label>出荷先コード</label>
+                    <input [(ngModel)]="customers.customerCode" type="text">
+                </div>
+                <div class="group-input customer-name">
+                    <label>名称</label>
+                    <input [(ngModel)]="customers.customerName" type="text">
+                </div>
+                <div class="group-input pic">
+                    <label>担当者</label>
+                    <input [(ngModel)]="customers.picName" type="text">
+                </div>
+            </div>
+            <div class="row-2">
+                <div class="group-input lead-time">
+                    <label>リードタイム</label>
+                    <input [(ngModel)]="customers.leadTime" type="text">
+                </div>
+                <div class="group-input route-code">
+                    <label>ルートコード</label>
+                    <select id="cars">
+                        <option value="default" selected="!idCustomer">-----</option>
+                        <option *ngFor="let route of routes"  selected="route.routeCode == customers?.routeCode" value="route?.routeCode">{{route?.routeName}}</option>
+                    </select>
+                </div>
+                <div class="group-input course-code">
+                    <label>コースコード</label>
+                    <select id="cars">
+                        <option value="default" selected="!idCustomer">-----</option>
+                        <option *ngFor="let course of courses" value="course?.courseCode" selected="course.courseCode == customers?.courseCode">{{course?.courseName}}</option>
+                    </select>
+                </div>
+            </div>
+            <div class="row-3">
+                <div class="group-input description">
+                    <label>摘要</label>
+                    <textarea [(ngModel)]="customers.description " cols="30" rows="3"></textarea>
+                </div>
+            </div>
+        </div>
+        <div class="container-form__right">
+            <div class="row-1">
+                <div class="group-input phone-number">
+                    <label>電話番号</label>
+                    <input [(ngModel)]="customers.phoneNumber " type="text">
+                </div>
+                <div class="group-input fax-number">
+                    <label>ファックス番号</label>
+                    <input [(ngModel)]="customers.faxNumber " type="text">
+                </div>
+            </div>
+            <div class="row-2">
+                <div class="group-input postal-code">
+                    <label>郵便番号</label>
+                    <input [(ngModel)]="customers.postCode " type="text">
+                </div>
+                <div class="group-address">
+                    <label>住所</label>
+                    <div class="group-input address">
+                        <input disabled [(ngModel)]="customers.address1" type="text">
+                        <input disabled [(ngModel)]="customers.address2" type="text">
+                        <input disabled [(ngModel)]="customers.address3" type="text">
+                    </div>
+                    <input [(ngModel)]="customers.address4" type="text" >
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

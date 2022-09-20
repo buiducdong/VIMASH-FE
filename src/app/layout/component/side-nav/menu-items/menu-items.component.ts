@@ -12,7 +12,9 @@ export class MenuItemsComponent implements OnInit {
     routeLink: '',
     label: '',
     items: [],
-    expanded: false
+    expanded: false,
+    level: 1,
+    category: '',
   }
 
   @Input() expanded: boolean | undefined;

@@ -12,6 +12,7 @@ $height-header: 48px;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  z-index: 99;
 
   ul {
     margin: 0;
@@ -21,72 +22,43 @@ $height-header: 48px;
     width: 100%;
     height: 100%;
     li {
-      font-weight: 500;
-      font-size: 18px;
-      color: #9f9f9f;
       display: flex;
       align-items: center;
       height: 100%;
-    }
 
-    li.active {
-      color: #4392bb;
-    }
+      a {
+        font-weight: 500;
+        font-size: 18px;
+        color: #9f9f9f;
+      }
 
-    li:last-child {
-      cursor: pointer;
-      box-sizing: border-box;
+      .active {
+        color: #4392bb;
+        background-color: white;
+      }
+
+    }
+    .icon-add {
       display: flex;
-      flex-direction: row;
-      justify-content: center;
       align-items: center;
+      justify-content: center;
+      background-color:  #4392bb;
       width: 28px;
       height: 28px;
-      background-color: #4392bb;
       border-radius: 3px;
-      margin-left: 20px;
-
+      margin: 20px;
+      cursor: pointer;
       .icon-plus {
         font-size: 13px;
         width: 12px;
         height: 20px;
+        font-weight: 900;
+        font-size: 13px;
+        line-height: 150%;
+        color: #FFFFFF;
       }
     }
 
-    span {
-      margin: 0 16px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      .arrow-right {
-        width: 7px;
-        height: 16px;
-        fill: #9f9f9f;
-      }
-    }
-  }
-
-  .icon-right-header {
-    box-sizing: border-box;
-    border: 1px solid #d6d6d6;
-    border-radius: 3px;
-    width: 28px;
-    height: 28px;
-    background: #ffffff;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    transition: all 0.2s ease-in;
-
-    &:hover {
-      background-color: #d6d6d6;
     }
 
-    .arrow-up {
-      color: #4392bb;
-      width: 13px;
-      height: 21px;
-    }
-  }
 }

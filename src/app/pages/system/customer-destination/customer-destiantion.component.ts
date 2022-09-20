@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, SimpleChanges } from '@angular/core';
+import { NavigationEnd, Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 import { ISearchRequest } from 'src/app/core';
 import { HttpService } from 'src/app/core/services/http/http.service';
 import { environment } from '../../../../environments/environment'
@@ -9,9 +11,23 @@ import { environment } from '../../../../environments/environment'
   styleUrls: ['./customer-destiantion.component.scss'],
 })
 export class CustomerDestiantionComponent implements OnInit {
-  public constructor(private httpService: HttpService) {
+  public constructor(private httpService: HttpService, private router: Router, private toast: ToastrService) {
     this.getCustomerTable()
+    router.events.subscribe((event) => {
+      if(event instanceof NavigationEnd) {
+        let route: any = event.urlAfterRedirects
+        if (route.includes("delivery"))  {
+          this.isDelivery = true
+        } else {
+          this.isDelivery = false
+        }
+      }
+    })
   }
+  isDelivery = false
+  showDialog = false
+  idDelete?: number
+  page = 1
   serchRequest: ISearchRequest = {
     page: 1,
     size: 10,
@@ -21,29 +37,52 @@ export class CustomerDestiantionComponent implements OnInit {
   };
 
   listdata = [];
+  totalRecord?: number;
+  currentPage?: number;
   public ngOnInit() {
     this.getCustomerTable()
   }
 
+  onShowDialog(data: any): void {
+    this.showDialog = !this.showDialog
+    this.idDelete = data
+  }
+
   disableSearch = false
   getCustomerTable() {
-    const http = environment.API_SERVICE + "/api/customers"
-    this.httpService.get(http, this.serchRequest).subscribe(result => {
+    this.httpService.get(this.serchRequest).subscribe(result => {
+      console.log(result)
       this.listdata = result.ResultBean.data.results
-      console.log(this.listdata)
+      this.totalRecord = result.ResultBean.data.totalRecords
+      this.currentPage = result.ResultBean.data.currentPage
+    }
+      )
+  }
+
+  
+  showMore() {
+    this.serchRequest.page = this.page +=1;
+    this.httpService.get(this.serchRequest).subscribe(result => {
+      const data:[] = result.ResultBean.data.results;
+      this.listdata.push(...data)
+    })
+  }
+
+
+  deleteCustomer(id: number) {
+    this.httpService.deleteSignleCustomer(id).subscribe(result => {
+      this.getCustomerTable()
     })
   }
 
   searchCustomerTable() {
     if (this.serchRequest.name != null && this.serchRequest.name.length > 0 || (this.serchRequest.code1 != null && this.serchRequest.code2 != null)) {
 
-      const http = environment.API_SERVICE + "/api/customers"
-      this.httpService.get(http, this.serchRequest).subscribe(result => {
+      this.httpService.get(this.serchRequest).subscribe(result => {
         this.listdata = result.ResultBean.data.results
-        console.log(this.listdata)
       })
+      this.clearInput()
     }
-    this.clearInput()
   }
 
   clearInput() {
@@ -51,5 +90,6 @@ export class CustomerDestiantionComponent implements OnInit {
     this.serchRequest.code1 = '';
     this.serchRequest.code2 = '';
   }
+
 
 }

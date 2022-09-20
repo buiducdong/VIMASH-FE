@@ -1,4 +1,5 @@
-<div class="container">
+<router-outlet></router-outlet>
+<div *ngIf="!isDelivery" class="container">
   <div class="search">
     <div class="from-to input-group">
       <label>{{ "screen.customer.customer-code" | translate }}</label>
@@ -43,17 +44,34 @@
   </div>
   <div class="table-group">
     <div class="table-group__header">
-      <div class="title">{{ "screen.company.tbl-title" | translate }}</div>
-      <div class="download-csv">
-        <mat-icon class="download" svgIcon="icon-lock"></mat-icon>
-        <span>csv</span>
+      <div class="table-group__header__left">
+        <div class="title">{{ "screen.company.tbl-title" | translate }}</div>
+        <div class="download-csv">
+          <mat-icon class="download" svgIcon="icon-lock"></mat-icon>
+          <span>csv</span>
+        </div>
+      </div>
+      <div class="info">
+        {{"common.paging.total-checked" | translate}} {{listdata.length}} / <span style="color: #4392BB;">{{totalRecord}}</span> {{"common.paging.total" | translate}}
       </div>
     </div>
     <div class="table">
       <datatable-customer
         *ngIf="listdata && listdata.length"
         [dataTable]="listdata"
+        (showDialog)="onShowDialog($event)"
+        (deleteCustomer)="onShowDialog($event)"
       ></datatable-customer>
+    </div>
+    <div class="more">
+      <button [disabled]="listdata.length <= 0" (click)="showMore()">更に表示</button>
     </div>
   </div>
 </div>
+<app-confirm-dialog
+  *ngIf="showDialog"
+  (onShowDialog)="onShowDialog($event)"
+  (deleteCustomer)="deleteCustomer($event)"
+  [idDelete]="idDelete"
+>
+</app-confirm-dialog>

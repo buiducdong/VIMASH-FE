@@ -1,25 +1,26 @@
 {
   "common": {
     "paging": {
-      "total": " 件",
-      "total-checked": "総計"
+      "total": " total",
+      "total-checked": "checked"
     },
     "datatable": {
       "no-data": "表示するデータがありません。",
       "btn-action": "操作"
     },
     "title": {
-      "title-confirm": "確認"
+      "title-confirm": "confirm",
+      "title-conttent": "Delete a product. is this good"
     },
     "button": {
-      "show-more": "show more",
+      "show-more": "more",
       "delete": "delete",
       "register": "保存",
       "search": "search",
       "clear": "clear",
       "ok": "OK",
-      "yes": "はい",
-      "no": "いいえ",
+      "yes": "yes",
+      "no": "no",
       "return": "戻る",
       "re-display": "再表示",
       "keep": "保存",
@@ -28,17 +29,17 @@
     },
     "menu": {
       "master": {
-        "name": "マスタ",
-        "pic": "担当者",
-        "company": "荷主",
+        "name": "master",
+        "pic": "pic",
+        "company": "company",
         "product": "商品",
         "owner": "所有者",
         "location": "ロケーション",
         "stock-status": "在庫状態",
         "supplier": "仕入先",
         "supplier-delivery-dest": "仕入先詳細",
-        "customer": "出荷先",
-        "customer-delivery-dest": "出荷先詳細",
+        "customer": "customer",
+        "customer-delivery-dest": "delivery",
         "product-category-1": "商品分類１",
         "product-category-2": "商品分類２",
         "product-category-3": "商品分類３",
@@ -59,7 +60,7 @@
         "unit": "単位"
       },
       "goods-receipt": {
-        "name": "入庫",
+        "name": "receipt",
         "enter-warehousing-schedule": "入庫予定入力",
         "scheduled-warehousing-closed": "入庫予定クローズ",
         "receipt-record": "入庫実績",
@@ -70,7 +71,7 @@
         "report-list": "レポート一覧"
       },
       "goods-issue": {
-        "name": "出庫",
+        "name": "issue",
         "entering-the-delivery-schedule": "出庫予定入力",
         "scheduled-to-be-delivered-closed": "出庫予定クローズ",
         "delivery-record-registration": "出庫実績登録",
@@ -91,21 +92,21 @@
         "delivery-slip": "納品書"
       },
       "stock": {
-        "name": "在庫",
+        "name": "stock",
         "inventory-adjustment": "在庫調整",
         "inventory-transfer": "在庫移管",
         "inventory-inquiry": "在庫照会",
         "report-list": "レポート一覧"
       },
       "inventory": {
-        "name": "棚卸",
+        "name": "inventory",
         "inventory-registration": "棚卸登録",
         "inventory-confirmed": "棚卸確定",
         "inventory-cancellation": "棚卸取消",
         "report-list": "レポート一覧"
       },
       "daily": {
-        "name": "日次",
+        "name": "daily",
         "daily-processing": "日次処理",
         "report-output-list": "レポート出力一覧"
       },
@@ -191,7 +192,7 @@
       "btn-change-password": "送信"
     },
     "company": {
-      "tbl-title": "検索結果一覧",
+      "tbl-title": "company",
       "no": "No.",
       "code": "荷主",
       "company-name": "荷主名称",
@@ -209,7 +210,7 @@
       "title-add": "新規入力",
       "title-update": "荷主詳細",
       "company": "荷主",
-      "name": "名称",
+      "name": "name",
       "screen-pattern": "画面パターン",
       "label1": "イデシギョー株式会社",
       "company-address": "荷主アドレス１",
@@ -411,7 +412,7 @@
     },
     "sales-price-unit": {
       "no": "No.",
-      "customerCode": "出荷先コード",
+      "customerCode": "customerCode",
       "customerName": "名称",
       "productCode": "商品コード",
       "productName": "名称",
@@ -560,7 +561,7 @@
       "quantity": "数量"
     },
     "customer": {
-      "tbl-title": "検索結果一覧",
+      "tbl-title": "result",
       "no": "No.",
       "customer-code": "customer code",
       "customer-name": "customer name",

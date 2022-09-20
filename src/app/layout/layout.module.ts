@@ -12,6 +12,7 @@ import { HeaderComponent } from './component/header/header.component';
 import { SideNavComponent } from './component/side-nav/side-nav.component';
 import {MatListModule} from '@angular/material/list';
 import { MenuItemsComponent } from './component/side-nav/menu-items/menu-items.component';
+import { TranslateModule } from '@ngx-translate/core';
 
 @NgModule({
   declarations: [FooterComponent, SideNavComponent, HeaderComponent, MenuItemsComponent],
@@ -22,7 +23,9 @@ import { MenuItemsComponent } from './component/side-nav/menu-items/menu-items.c
     RouterModule,
     MatIconModule,
     MatFormFieldModule,
-    MatListModule
+    MatListModule,
+    TranslateModule,
+
   ],
   exports: [
     FooterComponent,
@@ -31,7 +34,8 @@ import { MenuItemsComponent } from './component/side-nav/menu-items/menu-items.c
     HeaderComponent,
     MatFormFieldModule,
     MatIconModule,
-    MatListModule
+    MatListModule,
+
   ],
   providers: [
     {

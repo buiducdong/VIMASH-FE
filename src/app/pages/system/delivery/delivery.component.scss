@@ -1,0 +1,174 @@
+.delivery {
+    padding: 0px 20px;
+    background-color: #ffff;
+
+    .header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        height: 46px;
+        
+        button {
+            height: 30px;
+            border: 1px solid #D6D6D6;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+
+        &__left {
+            button {
+                background: #FFFFFF;
+            }
+        }
+
+        &__right {
+            display: flex;
+            gap: 16px;
+            align-items: center;
+
+            &-delete {
+                background-color: #F7AEAE;
+            }
+
+            &-refresh {
+                background: #FCFCFC;
+            }
+
+            &-save {
+                background: #4392BB;
+            }
+        }
+    }
+
+    .container-form {
+        display: flex;
+        gap: 16px;
+        flex-wrap: wrap;
+
+        .group-input {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+            justify-content: space-between;
+
+            label {
+                font-weight: 700;
+                font-size: 12px;
+                letter-spacing: 0.014em;
+                color: #485764;
+            }
+
+            input, select {
+                padding: 0px 8px;
+                height: 30px;
+                background: #FFFFFF;
+                border: 1px solid #D6D6D6;
+                border-radius: 2px;
+                outline: none;
+            }
+
+            textarea  {
+                padding: 0px 8px;
+                background: #FFFFFF;
+                border: 1px solid #D6D6D6;
+                border-radius: 2px;
+                outline: none;
+                width: 639px;
+            }
+        }
+
+        &__left {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            .row-1 {
+                display: flex;
+                gap: 16px;
+                align-items: center;
+
+                .customer-code input{
+                    width: 93px;
+                }
+
+                .customer-name input {
+                    width: 312px;
+                }
+            }
+
+            .row-2 {
+                display: flex;
+                gap: 16px;
+                align-items: center;
+
+                .lead-time input {
+                    width: 93px;
+                }
+
+                .route-code select {
+                    width: 257px;
+                }
+
+                .course-code select {
+                    width: 257px;
+                }
+            }
+        }
+
+        &__right {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+
+            .row-1 {
+                display: flex;
+                gap: 16px;
+            }
+
+            .row-2 {
+                display: flex;
+                gap: 16px;
+
+                .group-input.postal-code {
+                    justify-content: flex-start;
+                }
+
+                .group-address {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 4px;
+                    
+                    label {
+                        font-weight: 700;
+                        font-size: 12px;
+                        letter-spacing: 0.014em;
+                        color: #485764;
+                    }
+
+                    .group-input.address {
+                        display: flex;
+                        flex-direction: row;
+
+                        input {
+                            width: 135px;
+
+                            &:disabled {
+                                background: #F2F2F2;
+                            }
+                        }
+                    }
+
+                    input {
+                        padding: 0px 8px;
+                        height: 30px;
+                        background: #FFFFFF;
+                        border: 1px solid #D6D6D6;
+                        border-radius: 2px;
+                        outline: none;
+                    }
+                }
+            }
+        }
+    }
+}

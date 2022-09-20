@@ -1,0 +1,21 @@
+<div class="overlay">
+<div class="container">
+    <div class="header">
+        <div class="header__title">
+            {{"common.title.title-confirm" | translate}}
+        </div>
+        <div (click)="closeDialog()" class="header__close">
+            X
+        </div>
+    </div>
+    <div class="body">
+        <div class="body__content">
+            {{"common.title.title-conttent" | translate}}
+        </div>
+        <div class="body__action">
+            <button class="no" (click)="closeDialog()"> {{"common.button.no" | translate}}</button>
+            <button class="yes" (click)="deleteCustomerr()"> {{"common.button.yes" | translate}}</button>
+        </div>
+    </div>
+</div>    
+</div>

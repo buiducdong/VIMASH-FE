@@ -1,6 +1,14 @@
+<div *ngFor="let data of dataTable"> 
+  {{data.customerCode}}
+</div>
+<div
+    *ngIf="columns.length > 0 && dataSource"
+    class="table-container"
+  >
+
 <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
   <!-- position column -->
-  <ng-container matColumnDef="position" [sticky]="true" [stickyEnd]="true">
+  <ng-container matColumnDef="position" sticky>
     <th class="No" mat-header-cell *matHeaderCellDef>No.</th>
     <td class="No" mat-cell *matCellDef="let element; let j = index">
       {{ j + 1 }}
@@ -8,8 +16,8 @@
   </ng-container>
 
   <!-- customerId column -->
-  <ng-container matColumnDef="customerCode" [sticky]="true" [stickyEnd]="true">
-    <th class="customerCode" mat-header-cell *matHeaderCellDef>出荷先コード</th>
+  <ng-container matColumnDef="customerCode">
+    <th class="customerCode" mat-header-cell *matHeaderCellDef>{{"screen.sales-price-unit.customerCode" | translate}}</th>
     <td class="customerCode" mat-cell *matCellDef="let element">
       {{ element.customerCode }}
     </td>
@@ -17,7 +25,7 @@
 
   <!-- customerName column -->
   <ng-container matColumnDef="customerName">
-    <th class="customerName" mat-header-cell *matHeaderCellDef>名称</th>
+    <th class="customerName" mat-header-cell *matHeaderCellDef>{{"screen.company-detail.name" | translate}}</th>
     <td class="customerName" mat-cell *matCellDef="let element">
       {{ element.customerName }}
     </td>
@@ -25,7 +33,7 @@
 
   <!-- picName column -->
   <ng-container matColumnDef="picName">
-    <th class="picName" mat-header-cell *matHeaderCellDef>担当者</th>
+    <th class="picName" mat-header-cell *matHeaderCellDef>{{"common.menu.master.pic" | translate}}</th>
     <td class="picName" mat-cell *matCellDef="let element">
       {{ element.picName }}
     </td>
@@ -88,10 +96,11 @@
   </ng-container>
 
   <!-- courseCode column -->
-  <ng-container matColumnDef="delete" [stickyEnd]="true">
-    <th class="courseCode" mat-header-cell *matHeaderCellDef>コース</th>
-    <td class="courseCode" mat-cell *matCellDef="let element">
+  <ng-container matColumnDef="delete" stickyEnd>
+    <th class="delete" mat-header-cell *matHeaderCellDef>コース</th>
+    <td class="delete" mat-cell *matCellDef="let element" >
       <mat-icon
+        (click)="deleteSingleCustomer(element.customerId)"
         style="cursor: pointer"
         class="delete"
         svgIcon="icon-delete-red"
@@ -99,6 +108,7 @@
     </td>
   </ng-container>
 
-  <tr mat-header-row *matHeaderRowDef="columns"></tr>
-  <tr mat-row *matRowDef="let row; columns: columns"></tr>
+  <tr mat-header-row *matHeaderRowDef="columns" ></tr>
+  <tr mat-row *matRowDef="let row; columns: columns" (click)="onClickRow(row.customerId)"></tr>
 </table>
+</div>

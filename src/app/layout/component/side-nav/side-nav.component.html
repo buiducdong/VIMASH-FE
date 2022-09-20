@@ -5,18 +5,17 @@
   <ul>
     <li *ngFor="let data of navbarData" (click)="expandedNavItem(data)">
       <a
+        [ngClass]="getActiveClass(data)"
         *ngIf="!data.items || (data.items && data.items.length === 0)"
         [routerLink]="[data.routeLink]"
-        routerLinkActive="active"
-        [routerLinkActiveOptions]="{ exact: true }"
-        >{{ data.label }}</a
+        >{{ data.label | translate }}</a
       >
       <div
         style="height: 100%; width: 100%"
         *ngIf="data.items && data.items.length > 0"
       >
         <a [ngClass]="getActiveClass(data)">
-          {{ data.label }}
+          {{ data.label | translate }}
         </a>
 
         <app-menu-items
@@ -28,6 +27,5 @@
         </app-menu-items>
       </div>
     </li>
-    <li>EDI</li>
   </ul>
 </div>
