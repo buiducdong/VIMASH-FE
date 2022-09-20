@@ -149,13 +149,8 @@ export class CustomerDestinationDetailComponent implements OnInit, OnChanges {
     })
   }
   getCourse(val:any){
-    this.api.getCourse(val).subscribe({
-      next:(res) =>{
-        
-        this.dataCourse = res.ResultBean.data;
-      },
-      error:(err)=>{
-      }
+    this.api.getCourse(val).subscribe((res) =>{
+      this.dataCourse = res.ResultBean.data;
     })
   }
   getAddress(val:any){
@@ -187,9 +182,7 @@ export class CustomerDestinationDetailComponent implements OnInit, OnChanges {
     this.formCustomer.reset()
     this._router.navigate(['/customer'])
   }
-  dataRow($event: any) :void{
-    console.log($event)
-  }
+
   delete(){
     this.dialog.open(MatDialogConfirmComponent,{
       width: '480px',
