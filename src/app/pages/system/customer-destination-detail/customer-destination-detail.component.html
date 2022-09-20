@@ -1,16 +1,16 @@
-<div class="container">
+<div class="container" >
     <div class="box-customer">
         
         <form class="form-customer" [formGroup]="formCustomer" >
             <div class="button-customer">
                 <div class="button-customer-left">
-                    <button routerLink="/system/customer">
+                    <button routerLink="/customer">
                             <mat-icon svgIcon="icon-left" style="width: 10px"></mat-icon>
                         戻る
                     </button>
                 </div>
                 <div class="button-customer-right">
-                    <button class="button-delete-customer">
+                    <button class="button-delete-customer" (click)="delete()" [disabled]="isSave">
  
                         <mat-icon svgIcon="icon-delete-white"></mat-icon>
                         削除
@@ -20,7 +20,12 @@
                             
                         再表示
                     </button>
-                    <button class="button-save-customer" (click)="save()" mat-raised-button [disabled]="formCustomer.invalid">
+                    <button class="button-save-customer" (click)="save()" mat-raised-button [disabled]="formCustomer.invalid" *ngIf="isSave">
+                        <mat-icon svgIcon="icon-save"></mat-icon>
+                            
+                        保存
+                    </button>
+                    <button class="button-save-customer" (click)="update()" mat-raised-button [disabled]="formCustomer.invalid" *ngIf="!isSave">
                         <mat-icon svgIcon="icon-save"></mat-icon>
                             
                         保存
@@ -31,29 +36,29 @@
             <div class="row-top-input">
                 <div class="row w-93">
                     <mat-label>出荷先コード</mat-label>
-                    <input matInput placeholder="Placeholder" required formControlName="customerCode" (blur)="checkCustomerCode($event)">
+                    <input matInput placeholder="Placeholder"  formControlName="customerCode" (blur)="checkCustomerCode($event)">
                 </div>
                 <div class="row w-312">
                     <mat-label>名称</mat-label>
-                    <input matInput placeholder="Placeholder" required formControlName="customerName">
+                    <input matInput placeholder="Placeholder"  formControlName="customerName">
                 </div>
                 <div class="row w-202">
                     <mat-label>担当者</mat-label>
-                    <input matInput placeholder="Placeholder" required formControlName="createBy">
+                    <input matInput placeholder="Placeholder"  formControlName="createBy">
                 </div>
                 <div class="row w-202">
                     <mat-label>電話番号</mat-label>
-                    <input matInput placeholder="Placeholder" required formControlName="phoneNumber">
+                    <input matInput placeholder="Placeholder"  formControlName="phoneNumber">
                 </div>
                 <div class="row w-203">
                     <mat-label>ファックス番号</mat-label>
-                    <input matInput placeholder="Placeholder" required formControlName="faxNumber">
+                    <input matInput placeholder="Placeholder"  formControlName="faxNumber">
                 </div>
             </div>
             <div class="row-top-input row-2">
                 <div class="row w-93">
                     <mat-label>リードタイム</mat-label>
-                    <input matInput placeholder="Placeholder" required formControlName="leadTime">
+                    <input matInput placeholder="Placeholder"  formControlName="leadTime">
                 </div>
                 <div class="row w-257">
                     <mat-label>ルートコード</mat-label>
@@ -69,26 +74,23 @@
                 </div>
                 <div class="row w-93">
                     <mat-label>郵便番号</mat-label>
-                    <input matInput placeholder="Placeholder" required formControlName="postCode" (ngModelChange)="getAddress($event)"/>
+                    <input matInput placeholder="Placeholder"  formControlName="postCode" (ngModelChange)="getAddress($event)"/>
                 </div>
                 <div class="row w-166">
                     <mat-label>住所</mat-label>
-                    <input matInput  required formControlName="address1">
+                    <input matInput   formControlName="address1">
                 </div>
                 <div class="row w-166">
                     <mat-label> </mat-label>
-                    <input matInput  required formControlName="address2">
+                    <input matInput   formControlName="address2">
                 </div>
                 <div class="row w-166">
                     <mat-label> </mat-label>
-                    <input matInput  required formControlName="address3">
+                    <input matInput   formControlName="address3">
                 </div>
-                <div class="row w-530">
-                    <mat-label> </mat-label>
-                    <input matInput placeholder="Placeholder" required formControlName="address4">
-                </div>
+                
             </div> 
-            <div class="row-top-input">
+            <div class="row-top-input row-bottom-input">
                 <div class="row w-639">
                     <mat-label class="lbl-input">
                         摘要</mat-label>
@@ -98,7 +100,10 @@
                            formControlName="notes"/>
                   </mat-form-field>
                 </div>
-                
+                <div class="row w-530">
+                    <mat-label> </mat-label>
+                    <input matInput placeholder="Placeholder" required formControlName="address4">
+                </div>
             </div>
         </form>
     </div>

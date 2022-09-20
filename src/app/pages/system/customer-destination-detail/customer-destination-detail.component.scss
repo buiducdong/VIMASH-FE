@@ -168,7 +168,9 @@ option{
 .w-202{
     width: 204px;
     box-sizing: border-box;
+    
 }
+
 .w-203{
     width: 205px;
     box-sizing: border-box;
@@ -180,6 +182,10 @@ option{
 .w-166{
     width: 168px;
 }
+.w-166 input{
+    pointer-events: none;
+    background-color: #cccccc;
+}
 .row-2{
     position: relative;
 }
@@ -189,9 +195,11 @@ option{
 }
 .w-530{
     width: 534px;
-    position: absolute;
-    top: 54px;
-    right: 68PX;
+    height: 100%;
+    margin-left: 115px;
+}
+.row-bottom-input{
+    display: flex;
 }
 .flex-address{
     display: flex;

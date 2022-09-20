@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container" >
   <div class="search">
     <div class="from-to input-group">
       <label>{{ "screen.customer.customer-code" | translate }}</label>
@@ -27,7 +27,7 @@
       </div>
     </div>
     <div class="table">
-      <datatable-customer></datatable-customer>
+      <datatable-customer (dataRow)="dataRow($event)"></datatable-customer>
     </div>
   </div>
 </div>

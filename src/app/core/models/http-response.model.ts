@@ -1,3 +1,4 @@
+import { customer } from 'src/app/layout/models/customer.model';
 /* eslint-disable @typescript-eslint/no-explicit-any */
 
 export interface MetaModel {
@@ -20,12 +21,13 @@ export interface HttpClienRequest {
   page: number;
   size: number;
 }
-
-export interface HttpClientResponse {
-  data: DataSearchModel | any;
-  errors: object[];
-  meta: MetaModel;
+export interface HttpClienRequest {
+  page: number;
+  size: number;
 }
+
+
+
 
 export class DataSearchModel implements DataModel {
   public constructor(

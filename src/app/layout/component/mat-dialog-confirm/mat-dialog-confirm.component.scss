@@ -1,0 +1,70 @@
+
+
+.mat-toolbar {
+    max-height: 40px;
+    margin: -24px;
+    margin-bottom: 0;
+    width: auto;
+    font-weight: bold;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #4392BB;
+    
+    color: white;
+    mat-icon:hover {
+      cursor: pointer;
+      
+    }
+  }
+  mat-icon{
+    height: 16px;
+    width: 10px;
+    font-size: 0px;
+    align-items: center ;
+  }
+  .title{
+    height: 24px;
+    width: 33px;
+    font-size: 16px;
+    box-sizing: border-box;
+    line-height: 24px;
+  }
+  .content{
+    position: absolute;
+width: 344px;
+height: 27px;
+left: calc(50% - 344px/2);
+top: calc(50% - 27px/2 - 14.5px);
+color: black;
+text-align: center;
+  }
+
+  .btn-dialog-actions{
+    position: absolute;
+width: 344px;
+height: 41px;
+left: calc(50% - 344px/2);
+top: calc(50% - 27px/2 + 34.5px);
+color: black;
+text-align: center;
+box-sizing: border-box;
+display: flex;
+justify-content: center;
+    align-items: center;
+    gap: 16px;
+  }
+  .mgr-20{
+    border: 1px solid #D6D6D6;
+border-radius: 2px;
+  }
+  .mgr-20:hover{
+    background: #EFEFEF;
+  }
+  .color-hai{
+    background: #4392BB;
+  }
+  .color-hai:hover{
+    background: #29759C;
+  }
+  

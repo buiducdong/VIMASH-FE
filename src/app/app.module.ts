@@ -17,11 +17,13 @@ import { MatTableModule } from '@angular/material/table';
 
 
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
+import { MatDialogConfirmComponent } from './layout/component/mat-dialog-confirm/mat-dialog-confirm.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
+    MatDialogConfirmComponent,
   ],
   imports: [
     BrowserModule,

@@ -10,6 +10,8 @@ const routes: Routes = [
     path: '', component: SystemComponent, children: [
       { path: 'customer', component: CustomerDestiantionComponent },
       { path: 'customer-detail', component: CustomerDestinationDetailComponent }
+      ,
+      { path: 'customer-detail/:id', component: CustomerDestinationDetailComponent }
     ]
   }
 ];

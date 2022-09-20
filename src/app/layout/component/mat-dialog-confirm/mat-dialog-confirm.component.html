@@ -1,0 +1,27 @@
+<mat-toolbar>
+    <div class="title">
+        確認
+    </div>
+    <mat-icon svgIcon="icon-close-dialog" (click)="closeDialog()"></mat-icon>
+    
+</mat-toolbar>
+<div class="content">
+    商品を削除します。よろしいでしょうか。
+    
+</div>
+
+<div 
+     class="btn-dialog-actions">
+     <button 
+     mat-stroked-button
+     class="mgr-20" (click)="closeDialog()">
+     いいえ
+</button>
+
+<button 
+     mat-raised-button
+     class="color-hai"
+     (click)="deleteCustomer()">
+     はい
+</button>
+</div>
