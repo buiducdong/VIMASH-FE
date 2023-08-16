@@ -13,7 +13,7 @@ export class CustomerDestiantionComponent implements OnInit {
   }
   serchRequest: ISearchRequest = {};
 
-  listdata = [];
+  listdata = [{address: '2', courseCode: '33', customerCode: '44', customerId: 1}, {address: '2', courseCode: '33', customerCode: '44', customerId: 1}];
   ngOnInit(): void {
     this.getCustomerTable();
     console.log("customer render")
@@ -21,11 +21,10 @@ export class CustomerDestiantionComponent implements OnInit {
 
   disableSearch = false
   getCustomerTable() {
-
     const http = environment.API_SERVICE + "/api/customers"
     this.httpService.get(http, this.serchRequest).subscribe(result => {
-      this.listdata = result.ResultBean.data.results
-      console.log(this.listdata)
+      this.listdata = result.ResultBean.data
+      console.log(result.ResultBean.data)
     })
 
   }

@@ -41,15 +41,15 @@ export class DatatableCustomer implements OnInit {
 
   ngOnInit(): void {
     this.getCustomerTable();
-    console.log(this.dataTable)
-    console.log('tabel render')
+    console.log('tabel render', this.dataTable)
   }
 
   getCustomerTable() {
     const http = environment.API_SERVICE + "/api/customers"
     this.httpService.get(http, this.serchRequets).subscribe((res) => {
-      this.Customer = res.ResultBean.data.results;
-      this.dataSource = new MatTableDataSource<customer>(res.ResultBean.data.results);
+      console.log('res', res)
+      this.Customer = res.ResultBean.data;
+      this.dataSource = new MatTableDataSource<customer>(res.ResultBean.data);
       this.dataSource.paginator = this.paginator;
     });
   }
